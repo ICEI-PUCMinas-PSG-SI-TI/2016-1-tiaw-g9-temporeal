@@ -1,12 +1,8 @@
 # Introdução
 
 ## Problema
-> Nesse momento você deve apresentar o problema que a sua aplicação deve
-> resolver. No entanto, não é a hora de comentar sobre a aplicação.
-> Descreva também o contexto em que essa aplicação será usada, se
-> houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de
-> fato existir, pois ainda não é a hora de apresentar requisitos
-> detalhados ou projetos.
+> O uso excessivo da internet tem se tornado um dos principais fatores que afetam negativamente o desempenho acadêmico de estudantes. O acesso constante a redes sociais, jogos online e plataformas de entretenimento contribui para a perda de foco, aumento da procrastinação e dificuldade na organização dos estudos. Portanto, nosso projeto vem pra solucionar o vício na internet que causa a falta de desempenho acadêmico, através de um aplicativo, podendo ser usado em
+ambientes físicos que são focados em estudos, por exemplo uma biblioteca de escola ou faculdade, mas principalmente para qualquer lugar que uma pessoa queira estudar ou se manter longe das distrações que a internet proporciona.
 >
 > Nesse momento, o grupo pode optar por fazer uso
 > de ferramentas como Design Thinking, que permite um olhar de ponta a
