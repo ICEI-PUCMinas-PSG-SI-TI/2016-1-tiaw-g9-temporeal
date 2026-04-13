@@ -8,11 +8,17 @@
 
 ## Personas
 
-Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em
-se desenvolver profissionalmente através de um mestrado fora do país,
-pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está
-buscando uma agência que o ajude a encontrar universidades na Europa
-que aceitem alunos estrangeiros.
+1 - Lucas Ferreira
+Lucas Ferreira tem 16 anos, é estudante e passa grande parte do tempo nas redes sociais, especialmente assistindo vídeos curtos. Tem dificuldade de concentração nos estudos e costuma procrastinar, inclusive durante as aulas. Seu objetivo é melhorar suas notas e passar no ENEM, mas não consegue controlar sozinho o tempo que passa na internet.
+
+2 - Mariana Souza
+Mariana Souza tem 17 anos, é estudante e utiliza frequentemente o celular e o notebook para estudar, porém se distrai facilmente com redes sociais, filmes e séries. É ansiosa e determinada, mas tem dificuldade em manter uma rotina de estudos. Busca melhorar o foco, reduzir distrações e passar no vestibular.
+
+3 - Pedro Henrique 
+Pedro Henrique tem 18 anos, é estudante e gosta de jogos e conteúdos de tecnologia. Apesar de ser calmo, apresenta dificuldade de concentração devido ao uso excessivo da internet. Deseja controlar melhor seu tempo online, melhorar o foco e deixar de procrastinar para alcançar seus objetivos.
+
+4 - Gabriela Martins 
+Gabriela Martins tem 21 anos, é universitária e se interessa por tecnologia, com o objetivo de trabalhar na área de programação. Utiliza notebook e celular para estudar, mas frequentemente se distrai com redes sociais. Busca manter o foco, desenvolver suas habilidades e conquistar independência financeira.
 
 
 > Enumere e detalhe as personas da sua solução. Para
