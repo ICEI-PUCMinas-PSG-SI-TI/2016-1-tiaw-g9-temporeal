@@ -3,15 +3,17 @@
 
 Trabalho Interdisciplinar - Aplicacões Web
 
-`CURSO`
+`CURSO` SI/ADS
 
-`SEMESTRE`
+`SEMESTRE`1
 
 ## Participantes
 
 Os membros do grupo são: 
-- Fulano da Silva
-- Ciclano Albuquerque
+- Izhak Madeira De Sena
+- Giovanna Luisa Quintao de Freitas
+- Luiz Henrique Macedo
+- João Pedro Sousa Costa
 
 > Inclua a lista dos membros da equipe com seus nomes completos.
 
