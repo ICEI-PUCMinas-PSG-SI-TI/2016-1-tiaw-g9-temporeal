@@ -46,7 +46,7 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Aluno do ensino médio | ter acesso a ferramentas e técnicas | para passar no vestibular do curso do sonho, a Medicina. |
+|Aluno do ensino médio | ter acesso a ferramentas e técnicas | tirar uma nota alta para passar no vestibular do curso do sonho, a Medicina. |
 |Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
 
 > Apresente aqui as histórias de usuário que são relevantes para o
