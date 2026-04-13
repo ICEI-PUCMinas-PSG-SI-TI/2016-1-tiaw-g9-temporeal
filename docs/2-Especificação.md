@@ -8,7 +8,7 @@
 
 ## Personas
 
-1 - Lucas Ferreira
+> 1 - Lucas Ferreira
 Lucas Ferreira tem 16 anos, é estudante e passa grande parte do tempo nas redes sociais, especialmente assistindo vídeos curtos. Tem dificuldade de concentração nos estudos e costuma procrastinar, inclusive durante as aulas. Seu objetivo é melhorar suas notas e passar no ENEM, mas não consegue controlar sozinho o tempo que passa na internet.
 
 2 - Mariana Souza
