@@ -46,7 +46,9 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Aluno do ensino médio | Registrar minhas tarefas           | Não esquecer de fazê-las               |
+|Aluno do ensino médio | ter acesso a ferramentas e técnicas que me ajudem a reduzir
+o vício da Internet.            | melhorar meu desempenho acadêmico e tirar uma
+nota alta para passar no vestibular do curso do meu sonho, a Medicina.             |
 |Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
 
 > Apresente aqui as histórias de usuário que são relevantes para o
