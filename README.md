@@ -3,9 +3,9 @@
 
 Trabalho Interdisciplinar - Aplicacões Web
 
-`CURSO` SI/ADS
+`CURSO` Sistema de Informação e ADS
 
-`SEMESTRE`1
+`SEMESTRE` Primeiro Semestre
 
 ## Participantes
 
@@ -14,6 +14,7 @@ Os membros do grupo são:
 - Giovanna Luisa Quintao de Freitas
 - Luiz Henrique Macedo
 - João Pedro Sousa Costa
+- Rafael Queiroz Vilaça
 
 > Inclua a lista dos membros da equipe com seus nomes completos.
 
