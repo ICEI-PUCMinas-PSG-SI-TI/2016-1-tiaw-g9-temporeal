@@ -29,15 +29,11 @@ Desenvolver um sistema de controle de tempo de uso de outros aplicativos e dispo
 
 ## Justificativa
 
-> Descreva a importância ou a motivação para trabalhar com esta aplicação
-> que você escolheu. Indique as razões pelas quais você escolheu seus
-> objetivos específicos ou as razões para aprofundar em certos aspectos
-> do software.
-> 
-> O grupo de trabalho pode fazer uso de questionários, entrevistas e
-> dados estatísticos, que podem ser apresentados, com o objetivo de
-> esclarecer detalhes do problema que será abordado pelo grupo.
->
+A escolha deste tema se justifica pela relevância social e educacional do problema, que afeta diretamente o desempenho escolar e o desenvolvimento pessoal dos estudantes, devido ao aumento significativo do uso da internet. Segundo a pesquisa TIC Kids Online Brasil, do Cetic.br, cerca de 93% dos jovens brasileiros entre 9 e 17 anos utilizam a internet, sendo que a maioria acessa diariamente e por várias horas. Além disso, parte desses estudantes relatam dificuldades em controlar o tempo de uso, o que contribui para a procrastinação e a perda de foco nos estudos, prejudicando a concentração e o rendimento escolar. Diante desse cenário, a escolha do projeto foi baseada em algo que vivenciamos no dia a dia, vendo que o problema afeta muitas pessoas ao nosso redor, estudantes da nossa geração, e pela necessidade de integrar pais, professores e alunos no processo educacional, oferecendo uma solução que contribua para o acompanhamento e melhoria dos hábitos de estudo. 
+Os objetivos específicos foram definidos com base nesses problemas, priorizando o monitoramento do tempo de uso, a análise de comportamento, o incentivo à disciplina e a conscientização, para informar o usuário sobre o quão grave pode ser o vício
+digital, que muitas vezes as pessoas subestimam. 
+
+
 > **Links Úteis**:
 > - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
 
