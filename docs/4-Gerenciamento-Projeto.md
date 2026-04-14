@@ -39,14 +39,13 @@ Legenda:
 
 ## Ferramentas
 
-> Liste quais ferramentas foram empregadas no desenvolvimento do  projeto, justificando a escolha de cada uma delas. Use o formato abaixo como exemplo.
-
 As ferramentas empregadas no projeto são:
 
-- Canva
-- Miro
-- GitHub Classroom
-- Figma
+- Canva: criação de apresentações
+- Miro: construção de wireframes, mapas e brainstorming
+- GitHub Classroom: gernciamneto do projeto
+- Figma: criação de protótipos  e wireframes
+- Discord: meio de comunicação 
 
 
 ## Links Úteis
