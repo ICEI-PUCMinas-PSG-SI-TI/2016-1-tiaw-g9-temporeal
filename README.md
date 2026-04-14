@@ -16,8 +16,6 @@ Os membros do grupo são:
 - João Pedro Sousa Costa
 - Rafael Queiroz Vilaça
 
-> Inclua a lista dos membros da equipe com seus nomes completos.
-
 # Estrutura do Projeto
 
 1. [Contexto](./docs/1-Contexto.md)
