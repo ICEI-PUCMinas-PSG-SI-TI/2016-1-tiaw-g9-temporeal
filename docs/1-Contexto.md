@@ -42,16 +42,15 @@ digital, que muitas vezes as pessoas subestimam.
 
 ## Público-Alvo
 
-> Descreva quem serão as pessoas que usarão a sua aplicação indicando os
-> diferentes perfis. O objetivo aqui não é definir quem serão os
-> clientes ou quais serão os papéis dos usuários na aplicação. A ideia
-> é, dentro do possível, conhecer um pouco mais sobre o perfil dos
-> usuários: conhecimentos prévios, relação com a tecnologia, relações
-> hierárquicas, etc.
->
-> Adicione informações sobre o público-alvo por meio de uma descrição
-> textual, ou diagramas de personas, mapa de stakeholders, ou como o
-> grupo achar mais conveniente.
+A aplicação será utilizada principalmente por estudantes do ensino médio e superior, que possuem alta familiaridade com tecnologia, mas enfrentam dificuldades em manter o foco e organizar os estudos devido ao uso excessivo da internet. Ao redor deles, estão pais, professores e outros profissionais da educação, que possuem níveis variados de conhecimento tecnológico e atuam no acompanhamento, orientação e apoio ao desempenho acadêmico. Enquanto os responsáveis exercem papel de supervisão, os professores orientam o aprendizado e especialistas auxiliam na análise de comportamento. Assim, esses usuários possuem diferentes níveis de conhecimento tecnológico e se relacionam de forma hierárquica, com os estudantes no centro e os demais atuando como apoio no processo educacional.
+
+<img width="385" height="273" alt="Captura de tela 2026-04-14 170046" src="https://github.com/user-attachments/assets/6e289d97-823f-48d9-9592-c5e6ecfd82d3" />
+
+- Pessoas Fundamentais: estudantes e jovens universitários
+- Pessoas Importantes: ministério da educação, orgãos educacionais, governo e empresas de tecnologia 
+- Pessoas Influenciadoras: pedagogos, escolas, criadores de conteúdo educativo, pais/responsáveis e psicólogos
+
+
 > 
 > **Links Úteis**:
 > - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
