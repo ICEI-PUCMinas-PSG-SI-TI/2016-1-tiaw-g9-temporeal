@@ -8,21 +8,65 @@
 
 ## Personas
 
-1 - Lucas Ferreira
+## 1 - Lucas Ferreira (Usuário)
 
-Lucas Ferreira tem 16 anos, é estudante e passa grande parte do tempo nas redes sociais, especialmente assistindo vídeos curtos. Tem dificuldade de concentração nos estudos e costuma procrastinar, inclusive durante as aulas. Seu objetivo é melhorar suas notas e passar no ENEM, mas não consegue controlar sozinho o tempo que passa na internet.
+Lucas Ferreira tem 16 anos, é estudante e passa grande parte do tempo nas redes sociais, especialmente assistindo vídeos curtos. É uma pessoa distraída, sociável no mundo digital que tem dificuldade de concentração nos estudos e costuma procrastinar, inclusive durante as aulas. Seus sonhos são passar no ENEM e dar orgulho aos pais. Seu objetivo é melhorar suas notas na escola e evitar reprovação, mas não consegue controlar sozinho o tempo que passa na internet, oque prejudica negativamente o seu desempenho escolar. Devemos tratá-lo com empatia, sem julgamentos, incentivando pequenas mudanças de hábito еvalorizando seus esforços. Nunca devemos compará-lo com outros estudantes, ignorar o impacto da internet na rotina dele edesvalorizar seus interesses digitais. 
 
-2 - Mariana Souza
+Necessidade:
+- Um sistema que bloqueie as redes sociais durante o estudo
+- Relatório diário de tempo de uso
+- Metas de estudo com recompensas
 
-Mariana Souza tem 17 anos, é estudante e utiliza frequentemente o celular e o notebook para estudar, porém se distrai facilmente com redes sociais, filmes e séries. É ansiosa e determinada, mas tem dificuldade em manter uma rotina de estudos. Busca melhorar o foco, reduzir distrações e passar no vestibular.
+## 2 - Mariana Souza (Usuária)
 
-3 - Pedro Henrique 
+Mariana Souza tem 17 anos, é estudante e utiliza frequentemente o celular e o notebook para estudar, porém se distrai facilmente com redes sociais, filmes e séries. É ansiosa e determinada, mas tem dificuldade em manter uma rotina de estudos. Ela busca uma forma de controlar seu uso excessivo de redes sociais, melhorar seu foco e criar uma rotina de estudos mais
+eficiente, mas sozinha não consegue manter a disciplina e a organização, necessitando de apoio externo
+para reduzir as distrações e alcançar seus objetivos. Deve ser tratada com incentivo e linguagem leve, evitando pressão excessiva. Nunca devemos culpá-la pelo vício em redes sociais, tratá-la como se fosse preguiçosa ou desinteressada, impor regras rígidas sem explicação e ignorar seu lado emocional.
 
-Pedro Henrique tem 18 anos, é estudante e gosta de jogos e conteúdos de tecnologia. Apesar de ser calmo, apresenta dificuldade de concentração devido ao uso excessivo da internet. Deseja controlar melhor seu tempo online, melhorar o foco e deixar de procrastinar para alcançar seus objetivos.
+Necessidade
+- Planejamneto semanal de estudos
+- Alertas para quando sair do foco
+- Sessões de estudo guiado
 
-4 - Gabriela Martins 
+## 3 - Pedro Henrique (Usuário)
 
-Gabriela Martins tem 21 anos, é universitária e se interessa por tecnologia, com o objetivo de trabalhar na área de programação. Utiliza notebook e celular para estudar, mas frequentemente se distrai com redes sociais. Busca manter o foco, desenvolver suas habilidades e conquistar independência financeira.
+Pedro Henrique tem 18 anos, é estudante e gosta de jogos e conteúdos de tecnologia. Apesar de ser calmo, apresenta dificuldade de concentração devido ao uso excessivo da internet. Deseja uma maneira de regular o tempo de
+uso das redes socias, para melhorar sua capacidade de foco, e conseguir aproveitar melhor seu tempo para
+outras tarefas, e assim, atingir seus objetivos. Deve ser tratado com uma comunicação simples e direta, sem comparações. Com resultados positivos, ele percebe sua evolução e com o tempo começa a conseguir equilibrar estudos e lazer, portanto, suas
+emoções não podem ser ignoradas, e ele nunca deve se encontrar sobre pressão ou sofrer criticas desnecessárias.
+
+Necessidade:
+- Sistema de gamificação (ganha pontos ao estudar)
+- Limite de tempo para jogos
+- Acompanhamento de produtividade
+
+## 4 - Gabriela Martins (Usuária)
+
+Gabriela Martins tem 21 anos, é universitária e se interessa por tecnologia, com o objetivo de trabalhar na área de programação. Utiliza notebook e celular para estudar, mas frequentemente se distrai com redes sociais. Seus objetivos são desenvolver habilidades na área de tecnologia, conseguir emprego em T.I e criar projetos próprios. Devemos tratá-la com objetividade e praticidade, através de uma abordagem prática e motivadora, trazendo uma sensação constante de progresso. Nunca devemos fazer ela perder tempo com coisas desnecessárias, criar sistemas complicados e usar linguagem rebuscada. 
+
+Necessidade:
+- Feedback motivacional e progresso
+- Plano de estudos personalizados
+- Uso de streaks (dias consecutivos de estudo)
+
+## 5 - Marcelo Oliveira (Pai/Responsável do usuário)
+
+Marcelo Oliveira tem 45 anos, é motorista de aplicativo e um pai preocupado com o futuro de seu filho. Ele trabalha muitas horas por dia e nem sempre consegue acompanhar de perto a rotina de estudos de seu filho, mas percebe que o uso excessivo do celular está prejudicando os estudos. Então, ele gostaria de receber relatórios sobre o desempenho e foco, para entender se o filho está evoluindo.
+
+Necessidade:
+- Sugestões de como incentivar o filho a estudar
+- Acompanhamento da evolução
+- Alertas de queda no desempenho
+
+## 6 - Ricardo Alves (Professor do usuário)
+
+Ricardo tem 37 anos, e é um professor dedicado que busca melhorar o desempenho dos alunos, mas percebe que muitos estão desmotivados e distraídos pelo uso excessivo do celular. Ele acredita na tecnologia como aliada, mas sente falta de ferramentas eficazes para acompanhar os hábitos de estudo fora da sala de aula.
+
+Necessidade:
+- Apoio no engajamento dos alunos
+- Sugestões de estratégias de estudo
+- Relatórios de foco e tempo de estudo dos alunos 
+
 
 
 > Enumere e detalhe as personas da sua solução. Para
@@ -46,15 +90,13 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Aluno do ensino médio | ter acesso a ferramentas e técnicas | tirar uma nota alta para passar no vestibular do curso do sonho, a Medicina. |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
+| Aluno do ensino médio | definir metas diárias  de estudo | melhorar meu desempenhom acadêmico |
+| Universitário      | bloquear redes sociais durante o estudo | evitar distrações |
+| Estudante | visualizar meu tempo de uso do celular | ter mais controle da minha rotina |
+| Responsável | acessar relatórios de desempenho | acompanhar a evolução do meu filho |
+| Professor | visualizar o nível de foco dos alunos | identificar sua dificuldades |
+| Administrador | analisar dados de uso | melhorar o sistema | 
 
-> Apresente aqui as histórias de usuário que são relevantes para o
-> projeto de sua solução. As Histórias de Usuário consistem em uma
-> ferramenta poderosa para a compreensão e elicitação dos requisitos
-> funcionais e não funcionais da sua aplicação. Se possível, agrupe as
-> histórias de usuário por contexto, para facilitar consultas
-> recorrentes à essa parte do documento.
 >
 > **Links Úteis**:
 > - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
@@ -68,8 +110,15 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+|RF-001| Permitir o casadtro e login de usuários | ALTA | 
+|RF-002| Gerar relatórios e uso (diário, semanal, mensal)   | MÉDIA |
+|RF-003| Permitir definir limites de tempo de uso | ALTA |
+|RF-004| Emitir alertas ao ultrapassar o tempi de uso | ALTA |
+|RF-005| Permitir bloqueio de aplicativos durante o estudo | ALTA |
+|RF-006| Disponibilixzar técnicas e dicas de concentração | BAIXA |
+|RF-007| Fornecer feedback detalhado sobre desempenho | MÉDIA |
+|RF-008| Permitir acompanhamneto do desempenho acadêmico | ALTA |
+|RF-009| Permitir que o usuário cadastre tarefas | ALTA |
 
 
 ### Requisitos não Funcionais
@@ -78,6 +127,11 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |-------|-------------------------|----|
 |RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
 |RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+|RNF-003| Interface simples, intuita e de fácil navegação | ALTA |
+|RNF-004| Compatibilidade com dispositivos Android e iOS | ALTA |
+|RNF-005| Garantir segurança e proteção dos dados do usuário | ALTA |
+|RNF-006| Facilidade de manutenção e atualização | MÉDIA |
+|RNF-007| Notificação em tempo real | ALTA |
 
 > Com base nas Histórias de Usuário, enumere os requisitos da sua
 > solução. Classifique esses requisitos em dois grupos:
