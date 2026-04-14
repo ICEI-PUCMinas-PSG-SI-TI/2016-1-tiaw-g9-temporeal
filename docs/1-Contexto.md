@@ -18,9 +18,13 @@ Desenvolver um software que auxilie estudantes a reduzirem distrações digitais
 - Objetivo Específico
   
 Implementar ferramentas de planejamento e organização da rotina de estudos;
+
 Desenvolver funcionalidades que incentivem o foco;
+
 Promover o uso consciente e equilibrado da tecnologia no ambiente educacional;
+
 Criar mecanismos de monitoramento e acompanhamento para pais e professores;
+
 Desenvolver um sistema de controle de tempo de uso de outros aplicativos e dispositivos.
 
 
