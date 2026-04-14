@@ -43,10 +43,10 @@ Legenda:
 
 As ferramentas empregadas no projeto são:
 
-- Editor de código.
-- Ferramentas de diagramação.
-- Frameworks 
-- Outras ferramentas externas
+- Canva
+- Miro
+- GitHub
+- Figma
 
 
 ## Links Úteis
