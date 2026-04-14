@@ -1,8 +1,7 @@
 # Introdução
 
 ## Problema
-O uso excessivo da internet tem se tornado um dos principais fatores que afetam negativamente o desempenho acadêmico de estudantes. O acesso constante a redes sociais, jogos online e plataformas de entretenimento contribui para a perda de foco, aumento da procrastinação e dificuldade na organização dos estudos. Esse problema ocorre principalmente no contexto educacional, envolvendo estudantes que utilizam dispositivos digitais tanto para estudo quanto para lazer. A facilidade de acesso à internet e a falta de controle sobre seu uso tornam o ambiente propício à distração constante. 
-
+O uso excessivo da internet tem se tornado um dos principais fatores que afetam negativamente o desempenho acadêmico de estudantes. O acesso constante a redes sociais, jogos online e plataformas de entretenimento contribui para a perda de foco, aumento da procrastinação e dificuldade na organização dos estudos. Esse problema ocorre principalmente no contexto educacional, envolvendo estudantes que utilizam dispositivos digitais tanto para estudo quanto para lazer. A facilidade de acesso à internet e a falta de controle sobre seu uso tornam o ambiente propício à distração constante.
 Portanto, nosso projeto vem como uma alternativa para solucionar o vício na internet, através de um aplicativo, podendo ser usado em ambientes físicos que são focados em estudos, por exemplo uma biblioteca de escola ou faculdade, mas principalmente em qualquer lugar que uma pessoa queira estudar ou se manter longe das distrações que a internet proporciona.
 
 > **Links Úteis**:
@@ -32,6 +31,7 @@ Desenvolver um sistema de controle de tempo de uso de outros aplicativos e dispo
 ## Justificativa
 
 A escolha deste tema se justifica pela relevância social e educacional do problema, que afeta diretamente o desempenho escolar e o desenvolvimento pessoal dos estudantes, devido ao aumento significativo do uso da internet. Segundo a pesquisa TIC Kids Online Brasil, do Cetic.br, cerca de 93% dos jovens brasileiros entre 9 e 17 anos utilizam a internet, sendo que a maioria acessa diariamente e por várias horas. Além disso, parte desses estudantes relatam dificuldades em controlar o tempo de uso, o que contribui para a procrastinação e a perda de foco nos estudos, prejudicando a concentração e o rendimento escolar. 
+
 Diante desse cenário, a escolha do projeto foi baseada em algo que vivenciamos no dia a dia, vendo que o problema afeta muitas pessoas ao nosso redor, estudantes da nossa geração, e pela necessidade de integrar pais, professores e alunos no processo educacional, oferecendo uma solução que contribua para o acompanhamento e melhoria dos hábitos de estudo. 
 Os objetivos específicos foram definidos com base nesses problemas, priorizando o monitoramento do tempo de uso, a análise de comportamento, o incentivo à disciplina e a conscientização, para informar o usuário sobre o quão grave pode ser o vício
 digital, que muitas vezes as pessoas subestimam. 
