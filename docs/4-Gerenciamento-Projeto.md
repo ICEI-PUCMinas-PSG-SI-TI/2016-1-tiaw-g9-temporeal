@@ -45,7 +45,7 @@ As ferramentas empregadas no projeto são:
 
 - Canva
 - Miro
-- GitHub
+- GitHub Classroom
 - Figma
 
 
