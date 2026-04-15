@@ -4,16 +4,10 @@
 
 ## Tecnologias Utilizadas
 
-> Descreva aqui qual(is) tecnologias você vai usar para resolver o seu
-> problema, ou seja, implementar a sua solução. Liste todas as
-> tecnologias envolvidas, linguagens a serem utilizadas, serviços web,
-> frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
-> Apresente também uma figura explicando como as tecnologias estão
-> relacionadas ou como uma interação do usuário com o sistema vai ser
-> conduzida, por onde ela passa até retornar uma resposta ao usuário.
+> Durante a realização das atividades solicitadas, as seguintes ferramentas foram utilizadas:
 > 
-> Inclua os diagramas de User Flow, esboços criados pelo grupo
-> (stoyboards), além dos protótipos de telas (wireframes). Descreva cada
+> Figma (prototipo interativo e fluxo de telas), Miro (wireframe, personas e proposta de valor), Google Docs (histórias de usuários),
+> Canva (powerpoint) 
 > item textualmente comentando e complementando o que está apresentado
 > nas imagens.
 
