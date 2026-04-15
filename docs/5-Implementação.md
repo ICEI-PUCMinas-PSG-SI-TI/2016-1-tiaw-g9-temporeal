@@ -12,8 +12,8 @@
 
 ## Arquitetura da solução
 
-> Inclua um diagrama da solução e descreva os módulos e as tecnologias
-> que fazem parte da solução. Discorra sobre o diagrama.
+![WhatsApp Image 2026-04-14 at 22 25 58](https://github.com/user-attachments/assets/1150647a-509b-42aa-9933-17b5ea843e3a)
+
 
 A imagem a seguir ilustra a o fluxo do usuário em nossa solução. Assim
 que o usuário entra na plataforma, ele é apresentado à tela inicial
