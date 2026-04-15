@@ -26,10 +26,11 @@ Atualizado em: 09/01/2005
 
 | Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
 | :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
-| AlunaX        | Home-Page        | 01/01/2005     | 07/01/2005 | ✔️    | 05/01/2005      |
-| AlunaZ        | CSS Unificado    | 03/01/2005     | 10/01/2005 | 📝    |                 |
-| AlunoY        | Página de login  | 01/01/2005     | 07/01/2005 | ⌛     |                 |
-| AlunoK        | Script de login  |                | 12/01/2005 | ❌    |       |
+| Giovana       | Documentação e product design    | 09/04/2026     | 14/04/2026 | ✔️    | 14/04/2026      |
+| Izhak         | Product design    | 09/04/2026     | 14/04/2026 | ✔️    | 14/04/2026       |
+| Luiz          | Product discovery e metodologia     | 09/04/2026     | 14/04/2026 | ✔️     | 14/04/2026       |
+| João          | Contexto e metodologia       | 09/04/2026     | 14/04/2026 | ✔️    | 14/04/2026       |
+| Rafael        | Metodologia | 09/04/2026     | 14/04/2026 | ✔️    | 14/04/2026       |
 
 Legenda:
 - ✔️: terminado
