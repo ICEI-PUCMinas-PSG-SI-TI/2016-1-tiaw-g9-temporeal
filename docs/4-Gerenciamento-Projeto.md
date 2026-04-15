@@ -41,10 +41,10 @@ Legenda:
 
 As ferramentas empregadas no projeto são:
 
-- Canva: criação de apresentações
-- Miro: organização de ideias 
-- GitHub Classroom: gernciamneto do projeto
-- Figma: criação de protótipos e wireframes
+- Canva: criação de apresentações https://canva.link/vdmi9bbd7uricvt
+- Miro: organização de ideias https://miro.com/
+- GitHub Classroom: gernciamneto do projeto 
+- Figma: criação de protótipos e wireframes https://www.figma.com/
 - Discord: meio de comunicação da equipe
 
 
