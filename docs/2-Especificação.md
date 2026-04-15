@@ -90,6 +90,11 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 | Professor | visualizar o nível de foco dos alunos | identificar sua dificuldades |
 | Administrador | analisar dados de uso | melhorar o sistema | 
 
+![WhatsApp Image 2026-04-14 at 22 42 23](https://github.com/user-attachments/assets/029dc865-f5e0-4a38-bb52-4162c90c5eb4)
+![WhatsApp Image 2026-04-14 at 22 42 23 (1)](https://github.com/user-attachments/assets/b30ade98-e47a-46aa-b14a-055b8cbbad4e)
+![WhatsApp Image 2026-04-14 at 22 42 24](https://github.com/user-attachments/assets/2abc8e64-412c-4681-9979-0499366585e5)
+![WhatsApp Image 2026-04-14 at 22 42 24 (1)](https://github.com/user-attachments/assets/2feb8078-cf0b-4b66-bfe8-524c95c2ba01)
+
 >
 > **Links Úteis**:
 > - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
