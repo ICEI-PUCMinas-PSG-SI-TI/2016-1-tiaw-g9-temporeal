@@ -15,8 +15,6 @@ Durante a realização das atividades solicitadas, as seguintes ferramentas fora
 
 
 
-escolher salvar ou deletar o post. Em ambos os casos o status é
-notificado para o usuário (Tela 8) e em seguida ele é redirecionado
-para a Tela 2.
 
-![Exemplo de UserFlow](images/userflow.jpg)
+
+
