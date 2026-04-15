@@ -4,10 +4,9 @@
 
 ## Tecnologias Utilizadas
 
-> Durante a realização das atividades solicitadas, as seguintes ferramentas foram utilizadas:
-> 
-> Figma (prototipo interativo e fluxo de telas), Miro (wireframe, personas e proposta de valor), Google Docs (histórias de usuários),
-> Canva (powerpoint) 
+Durante a realização das atividades solicitadas, as seguintes ferramentas foram utilizadas:
+ 
+ Figma (prototipo interativo e fluxo de telas), Miro (wireframe, personas e proposta de valor), Google Docs (histórias de usuários), Canva (powerpoint) 
 
 
 ## Arquitetura da solução
