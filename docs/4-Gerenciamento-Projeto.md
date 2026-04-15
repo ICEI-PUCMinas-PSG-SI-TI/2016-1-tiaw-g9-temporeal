@@ -27,7 +27,7 @@ Atualizado em: 09/01/2005
 | Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
 | :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
 | Giovana       | Documentação e product design    | 09/04/2026     | 14/04/2026 | ✔️    | 14/04/2026      |
-| Izhak         | Product design    | 09/04/2026     | 14/04/2026 | ✔️    | 14/04/2026       |
+| Izhak         | Product design e wireframe   | 09/04/2026     | 14/04/2026 | ✔️    | 14/04/2026       |
 | Luiz          | Product discovery e metodologia     | 09/04/2026     | 14/04/2026 | ✔️     | 14/04/2026       |
 | João          | Contexto e metodologia       | 09/04/2026     | 14/04/2026 | ✔️    | 14/04/2026       |
 | Rafael        | Metodologia | 09/04/2026     | 14/04/2026 | ✔️    | 14/04/2026       |
