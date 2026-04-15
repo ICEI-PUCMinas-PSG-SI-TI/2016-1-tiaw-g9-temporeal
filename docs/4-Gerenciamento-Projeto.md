@@ -20,7 +20,6 @@
 
 ## Quadro de tarefas
 
-> Apresente a divisão de tarefas entre os membros do grupo e o acompanhamento da execução, conforme exemplo abaixo.
 
 Atualizado em: 09/01/2005
 
@@ -43,10 +42,10 @@ Legenda:
 As ferramentas empregadas no projeto são:
 
 - Canva: criação de apresentações
-- Miro: construção de wireframes, mapas e brainstorming
+- Miro: organização de ideias 
 - GitHub Classroom: gernciamneto do projeto
-- Figma: criação de protótipos  e wireframes
-- Discord: meio de comunicação 
+- Figma: criação de protótipos e wireframes
+- Discord: meio de comunicação da equipe
 
 
 ## Links Úteis
