@@ -2,6 +2,10 @@
 
 <span style="color:red">Pré-requisitos: <a href="1-Contexto.md"> Documentação de Contexto</a></span>
 
+## Matriz CSD
+![WhatsApp Image 2026-04-14 at 21 58 17](https://github.com/user-attachments/assets/b9a6d7a2-d734-4c03-a072-cfe9aa03bf16)
+
+
 
 ## Personas
 
