@@ -8,8 +8,7 @@
 > 
 > Figma (prototipo interativo e fluxo de telas), Miro (wireframe, personas e proposta de valor), Google Docs (histórias de usuários),
 > Canva (powerpoint) 
-> item textualmente comentando e complementando o que está apresentado
-> nas imagens.
+
 
 ## Arquitetura da solução
 
