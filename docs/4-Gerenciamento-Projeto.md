@@ -43,7 +43,7 @@ As ferramentas empregadas no projeto são:
 
 - Canva: criação de apresentações https://canva.link/vdmi9bbd7uricvt
 - Miro: organização de ideias https://miro.com/
-- GitHub Classroom: gernciamneto do projeto 
+- GitHub Classroom: gernciamneto do projeto https://github.com/ICEI-PUCMinas-PSG-SI-TI/2016-1-tiaw-g9-temporeal.git
 - Figma: criação de protótipos e wireframes https://www.figma.com/
 - Discord: meio de comunicação da equipe
 
