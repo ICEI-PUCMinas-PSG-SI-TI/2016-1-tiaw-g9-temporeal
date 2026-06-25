@@ -1,0 +1,134 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "nome": "Luiz Henrique",
+      "email": "luiz@gmail.com",
+      "senha": "123456",
+      "tipo": "aluno",
+      "dashboard": "aluno"
+    },
+    {
+      "id": "2",
+      "nome": "João da Silva",
+      "email": "joao@gmail.com",
+      "senha": "123456",
+      "tipo": "responsavel",
+      "dashboard": "responsavel"
+    },
+    {
+      "id": "3",
+      "nome": "Maria Oliveira",
+      "email": "maria@gmail.com",
+      "senha": "123456",
+      "tipo": "professor",
+      "dashboard": "professor"
+    }
+  ],
+  "tarefas": [
+    {
+      "titulo": "Trabalho de TIAW",
+      "descricao": "Apresentar sprint 2",
+      "tipo": "tarefa",
+      "data": "2026-06-03",
+      "id": "YbO2Fq0aCnc"
+    },
+    {
+      "titulo": "Prova de ATP",
+      "descricao": "Matriz, Vetores e Métodos ",
+      "tipo": "prova",
+      "data": "2026-05-26",
+      "id": "LIcGzGmyWxo"
+    }
+  ],
+  "atividades": [
+    {
+      "titulo": "Estudar algoritmo",
+      "categoria": "Estudo",
+      "horas": "2",
+      "data": "2026-05-26",
+      "id": "_Dvkn125MNY"
+    },
+    {
+      "titulo": "Trabalho interdisciplinar",
+      "categoria": "Estudo",
+      "horas": "1",
+      "data": "2026-05-20",
+      "id": "0vo81ygEWyo"
+    }
+  ],
+  "sessoes": [
+    {
+      "modo": "pomodoro",
+      "tempo": "25:00",
+      "data": "19/05/2026, 21:42:29",
+      "id": "deIV_7mCUeI"
+    },
+    {
+      "modo": "cronometro",
+      "tempo": "00:00:02",
+      "data": "19/05/2026, 21:42:34",
+      "id": "QVTTtcEovWg"
+    },
+    {
+      "modo": "cronometro",
+      "tempo": "00:00:07",
+      "data": "02/06/2026, 22:03:51",
+      "id": "JATYWxirVhE"
+    },
+    {
+      "modo": "cronometro",
+      "tempo": "00:00:01",
+      "data": "03/06/2026, 11:15:52",
+      "id": "1M8Te6lonrc"
+    }
+  ],
+  "alertas": [
+    {
+      "id": "2",
+      "aluno": "arthur",
+      "curso": "si",
+      "tipo": "faltas",
+      "nivel": "alto",
+      "titulo": "Muitas faltas",
+      "mensagem": "Foram registradas 5 faltas nos últimos 7 dias."
+    },
+    {
+      "id": "3",
+      "aluno": "izhak",
+      "curso": "ads",
+      "tipo": "tarefas",
+      "nivel": "medio",
+      "titulo": "Tarefas atrasadas",
+      "mensagem": "Existem 2 tarefas atrasadas."
+    },
+    {
+      "id": "4",
+      "aluno": "giovana",
+      "curso": "si",
+      "tipo": "redesSociais",
+      "nivel": "alto",
+      "titulo": "Uso excessivo de redes sociais",
+      "mensagem": "Tempo acima do limite diário."
+    },
+    {
+      "id": "aUH2DgHtdjg",
+      "aluno": "rafa",
+      "curso": "si",
+      "tipo": "produtividade",
+      "nivel": "baixo",
+      "titulo": "teste",
+      "mensagem": "teste de alerta"
+    },
+    {
+      "id": "Izeru0x6bbk",
+      "aluno": "rafa",
+      "curso": "si",
+      "tipo": "produtividade",
+      "nivel": "baixo",
+      "titulo": "teste",
+      "mensagem": "teste de alerta"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
