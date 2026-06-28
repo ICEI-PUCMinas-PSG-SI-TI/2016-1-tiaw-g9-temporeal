@@ -130,5 +130,36 @@
       "mensagem": "teste de alerta"
     }
   ],
+  
+  "noticias": [
+    {
+      "id": "2",
+      "titulo": "Uso excessivo de dispositivo digital afeta desempenho de alunos",
+      "descricao": "Relatório do PISA mostrou que estudantes que utilizam dispositivos digitais por muitas horas apresentam menor desempenho acadêmico.",
+      "dataPublicacao": "05/12/2023",
+      "horaPublicacao": "07:38",
+      "nomeSite": "Agência Brasil",
+      "link": "https://agenciabrasil.ebc.com.br/educacao/noticia/2023-12/pisa-uso-excessivo-de-dispositivo-digital-afeta-desempenho-de-alunos"
+    },
+    {
+      "id": "3",
+      "titulo": "Pesquisa revela que excesso de redes sociais afeta concentração e desempenho de universitários",
+      "descricao": "Estudo identificou sintomas de cansaço mental e dificuldades de concentração entre universitários hiperconectados.",
+      "dataPublicacao": "19/02/2026",
+      "horaPublicacao": "14:00",
+      "nomeSite": "Portal Castello",
+      "link": "https://portalcastello.com.br/pesquisa-revela-que-excesso-de-redes-sociais-afeta-concentracao-e-desempenho-de-universitarios/"
+    },
+    {
+      "id": "4",
+      "titulo": "Tela demais, saúde de menos: estudo associa uso excessivo a dificuldades no aprendizado",
+      "descricao": "Pesquisa da UFLA relaciona tempo excessivo de tela com ansiedade, sintomas físicos e queda no desempenho acadêmico.",
+      "dataPublicacao": "18/04/2026",
+      "horaPublicacao": "10:30",
+      "nomeSite": "UFLA",
+      "link": "https://ciencia.ufla.br/reportagens/saude/1118-tela-demais-saude-de-menos-estudo-associa-uso-excessivo-a-ansiedade-dores-e-dificuldades-no-aprendizado"
+    }
+  ],
+
   "$schema": "./node_modules/json-server/schema.json"
 }
