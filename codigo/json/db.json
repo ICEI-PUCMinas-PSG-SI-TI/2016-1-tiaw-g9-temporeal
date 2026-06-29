@@ -25,22 +25,7 @@
       "dashboard": "professor"
     }
   ],
-  "tarefas": [
-    {
-      "titulo": "Trabalho de TIAW",
-      "descricao": "Apresentar sprint 2",
-      "tipo": "tarefa",
-      "data": "2026-06-03",
-      "id": "YbO2Fq0aCnc"
-    },
-    {
-      "titulo": "Prova de ATP",
-      "descricao": "Matriz, Vetores e Métodos ",
-      "tipo": "prova",
-      "data": "2026-05-26",
-      "id": "LIcGzGmyWxo"
-    }
-  ],
+  "tarefas": [],
   "atividades": [
     {
       "titulo": "Estudar algoritmo",
@@ -59,75 +44,21 @@
   ],
   "sessoes": [
     {
-      "modo": "pomodoro",
-      "tempo": "25:00",
-      "data": "19/05/2026, 21:42:29",
-      "id": "deIV_7mCUeI"
-    },
-    {
-      "modo": "cronometro",
-      "tempo": "00:00:02",
-      "data": "19/05/2026, 21:42:34",
-      "id": "QVTTtcEovWg"
-    },
-    {
-      "modo": "cronometro",
-      "tempo": "00:00:07",
-      "data": "02/06/2026, 22:03:51",
-      "id": "JATYWxirVhE"
-    },
-    {
       "modo": "cronometro",
       "tempo": "00:00:01",
-      "data": "03/06/2026, 11:15:52",
-      "id": "1M8Te6lonrc"
+      "data": "25/06/2026, 22:07:04",
+      "id": "iaFbuWlxu24"
     }
   ],
   "alertas": [
     {
-      "id": "2",
-      "aluno": "arthur",
-      "curso": "si",
-      "tipo": "faltas",
-      "nivel": "alto",
-      "titulo": "Muitas faltas",
-      "mensagem": "Foram registradas 5 faltas nos últimos 7 dias."
-    },
-    {
-      "id": "3",
-      "aluno": "izhak",
-      "curso": "ads",
-      "tipo": "tarefas",
-      "nivel": "medio",
-      "titulo": "Tarefas atrasadas",
-      "mensagem": "Existem 2 tarefas atrasadas."
-    },
-    {
-      "id": "4",
-      "aluno": "giovana",
-      "curso": "si",
+      "aluno": "Pedro",
+      "curso": "ADS",
       "tipo": "redesSociais",
-      "nivel": "alto",
-      "titulo": "Uso excessivo de redes sociais",
-      "mensagem": "Tempo acima do limite diário."
-    },
-    {
-      "id": "aUH2DgHtdjg",
-      "aluno": "rafa",
-      "curso": "si",
-      "tipo": "produtividade",
       "nivel": "baixo",
-      "titulo": "teste",
-      "mensagem": "teste de alerta"
-    },
-    {
-      "id": "Izeru0x6bbk",
-      "aluno": "rafa",
-      "curso": "si",
-      "tipo": "produtividade",
-      "nivel": "baixo",
-      "titulo": "teste",
-      "mensagem": "teste de alerta"
+      "titulo": "ves",
+      "mensagem": "as",
+      "id": "SXTXRQ5XgbU"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
