@@ -42,14 +42,7 @@
       "id": "0vo81ygEWyo"
     }
   ],
-  "sessoes": [
-    {
-      "modo": "cronometro",
-      "tempo": "00:00:01",
-      "data": "25/06/2026, 22:07:04",
-      "id": "iaFbuWlxu24"
-    }
-  ],
+  "sessoes": [],
   "alertas": [
     {
       "aluno": "Pedro",
@@ -61,7 +54,6 @@
       "id": "SXTXRQ5XgbU"
     }
   ],
-  
   "noticias": [
     {
       "id": "2",
@@ -91,6 +83,5 @@
       "link": "https://ciencia.ufla.br/reportagens/saude/1118-tela-demais-saude-de-menos-estudo-associa-uso-excessivo-a-ansiedade-dores-e-dificuldades-no-aprendizado"
     }
   ],
-
   "$schema": "./node_modules/json-server/schema.json"
 }
