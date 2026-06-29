@@ -1,4 +1,4 @@
-li {
+#lista-tarefas li {
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 14px;
@@ -7,12 +7,11 @@ li {
     list-style: none;
 }
 
-li span {
+#lista-tarefas li span {
     display: block;
     font-size: 0.85rem;
     color: #666;
 }
-
 .botoes {
     margin-top: 10px;
     display: flex;
