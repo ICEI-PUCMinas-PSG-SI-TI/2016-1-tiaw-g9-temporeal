@@ -35,6 +35,18 @@
       "senha": "123",
       "dashboard": "aluno",
       "id": "ALaFQbwuTIU"
+    },
+    {
+      "nome": "joao",
+      "telefone": "311111111",
+      "cidade": "santa luzia",
+      "tipo": "aluno",
+      "categoria": "Aluno",
+      "escola": "puc",
+      "email": "joao@joao.com",
+      "senha": "123456",
+      "dashboard": "aluno",
+      "id": "niwhjfhUr8E"
     }
   ],
   "tarefas": [],
@@ -54,7 +66,14 @@
       "id": "0vo81ygEWyo"
     }
   ],
-  "sessoes": [],
+  "sessoes": [
+    {
+      "modo": "cronometro",
+      "tempo": "00:00:02",
+      "data": "6/30/2026, 8:18:45 PM",
+      "id": "tNTTtpVxFnk"
+    }
+  ],
   "alertas": [
     {
       "aluno": "Pedro",
