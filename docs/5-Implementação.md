@@ -165,7 +165,7 @@ Como Utilizar
 
 ⸻
 
-ESTRUTURAS DE DADOS DA SOLUÇÃO
+## ESTRUTURAS DE DADOS DA SOLUÇÃO ##
 
 Usuário
 
