@@ -213,7 +213,7 @@ Armazena notificações e lembretes do sistema.
 ## Tecnologias Utilizadas ##
 
 Durante a realização das atividades solicitadas, as seguintes ferramentas foram utilizadas:
-| Tecnologia | Informação |
+| Tecnologia |  Informação |
 | :----:     |    :----:   | 
 | HTML | Estruturas das páginas |
 | CSS | Estilização e layout |
