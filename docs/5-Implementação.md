@@ -218,6 +218,7 @@ Durante a realização das atividades solicitadas, as seguintes ferramentas fora
 | HTML | Estruturas das páginas |
 | CSS | Estilização e layout |
 | JavaScript | Lógica e interatividade |
+| JSON | Organizar os dados |
 | Local Storage | Persistência dos dados |
 
 
