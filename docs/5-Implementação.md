@@ -1,16 +1,10 @@
 # Solução Implementada
 
-<span style="color:red">Pré-requisitos: <a href="4-Gestão-Configuração.md"> Ambiente e Ferramentas de Trabalho</a></span>
-SOLUÇÃO IMPLEMENTADA
+## Login de Usuário ##
 
-Funcionalidade 1 – Login de Usuário
-
-Descrição
-
-Permite que o estudante acesse sua conta de forma segura e tenha acesso às suas informações personalizadas.
+Descrição: Permite que o estudante acesse sua conta de forma segura e tenha acesso às suas informações personalizadas.
 
 Estrutura de Dados Associada
-
 {
   "id": 1,
   "nome": "João Silva",
@@ -19,21 +13,17 @@ Estrutura de Dados Associada
 }
 
 Como Utilizar
-
 1. Acessar a tela de Login.
 2. Informar e-mail e senha.
 3. Clicar em “Entrar”.
 
 ⸻
 
-Funcionalidade 2 – Monitoramento de Tempo
+## Monitoramento de Tempo ##
 
-Descrição
-
-Registra e acompanha o tempo dedicado aos estudos, permitindo ao usuário visualizar sua produtividade.
+Descrição: Registra e acompanha o tempo dedicado aos estudos, permitindo ao usuário visualizar sua produtividade.
 
 Estrutura de Dados Associada
-
 {
   "usuarioId": 1,
   "data": "2025-06-30",
@@ -41,21 +31,16 @@ Estrutura de Dados Associada
 }
 
 Como Utilizar
-
 1. Iniciar uma sessão de estudo.
 2. O sistema registra o tempo automaticamente.
 3. Visualizar os dados no Dashboard.
 
 ⸻
 
-Funcionalidade 3 – Gerenciamento de Tarefas
-
-Descrição
-
-Permite criar, editar e excluir tarefas acadêmicas.
+## Gerenciamento de tarefas ##
+Descrição: Permite criar, editar e excluir tarefas acadêmicas.
 
 Estrutura de Dados Associada
-
 {
   "id": 101,
   "titulo": "Estudar Banco de Dados",
@@ -64,7 +49,6 @@ Estrutura de Dados Associada
 }
 
 Como Utilizar
-
 1. Acessar “Gerenciamento de Tarefas”.
 2. Clicar em “Nova Tarefa”.
 3. Preencher os dados.
@@ -72,14 +56,11 @@ Como Utilizar
 
 ⸻
 
-Funcionalidade 4 – Agenda de Tarefas
+## Agenda de Tarefas ##
 
-Descrição
-
-Organiza atividades por datas e horários.
+Descrição: Organiza atividades por datas e horários.
 
 Estrutura de Dados Associada
-
 {
   "id": 1,
   "titulo": "Entrega do Trabalho",
@@ -88,21 +69,17 @@ Estrutura de Dados Associada
 }
 
 Como Utilizar
-
 1. Selecionar uma data.
 2. Adicionar compromisso.
 3. Consultar eventos futuros.
 
 ⸻
 
-Funcionalidade 5 – Relatório de Produtividade
+## Relatório de Produtividade ##
 
-Descrição
-
-Apresenta estatísticas e indicadores de desempenho do usuário.
+Descrição: Apresenta estatísticas e indicadores de desempenho do usuário.
 
 Estrutura de Dados Associada
-
 {
   "usuarioId": 1,
   "horasEstudadas": 25,
@@ -111,21 +88,17 @@ Estrutura de Dados Associada
 }
 
 Como Utilizar
-
 1. Acessar “Relatórios”.
 2. Selecionar período.
 3. Visualizar gráficos e indicadores.
 
 ⸻
 
-Funcionalidade 6 – Temporizador Pomodoro
+## Temporizador Pomodoro ##
 
-Descrição
-
-Auxilia na concentração utilizando ciclos de estudo e descanso.
+Descrição: Auxilia na concentração utilizando ciclos de estudo e descanso.
 
 Estrutura de Dados Associada
-
 {
   "tempoFoco": 25,
   "tempoDescanso": 5,
@@ -133,21 +106,17 @@ Estrutura de Dados Associada
 }
 
 Como Utilizar
-
 1. Iniciar o temporizador.
 2. Estudar durante o período de foco.
 3. Realizar pausas programadas.
 
 ⸻
 
-Funcionalidade 7 – Visualização de Notícias
+## Visualização de Notícias ##
 
-Descrição
-
-Exibe notícias relacionadas à educação, tecnologia e produtividade.
+Descrição: Exibe notícias relacionadas à educação, tecnologia e produtividade.
 
 Estrutura de Dados Associada
-
 {
   "titulo": "Novas Tecnologias na Educação",
   "categoria": "Educação",
@@ -155,21 +124,17 @@ Estrutura de Dados Associada
 }
 
 Como Utilizar
-
 1. Acessar a aba Notícias.
 2. Selecionar uma notícia.
 3. Ler o conteúdo disponível.
 
 ⸻
 
-Funcionalidade 8 – Alertas Inteligentes
+## Alertas Inteligentes ##
 
-Descrição
-
-Envia lembretes sobre tarefas pendentes e metas de estudo.
+Descrição: Envia lembretes sobre tarefas pendentes e metas de estudo.
 
 Estrutura de Dados Associada
-
 {
   "id": 1,
   "mensagem": "Você possui uma tarefa para hoje.",
@@ -177,29 +142,23 @@ Estrutura de Dados Associada
 }
 
 Como Utilizar
-
 1. Ativar notificações.
 2. Receber alertas automáticos do sistema.
 
 ⸻
 
-Funcionalidade 9 – Perfil do Usuário
+## Perfil do Usuário ##
 
-Descrição
-
-Permite visualizar e editar informações pessoais.
+Descrição: Permite visualizar e editar informações pessoais.
 
 Estrutura de Dados Associada
-
 {
   "id": 1,
   "nome": "João Silva",
   "email": "joao@email.com",
-  "curso": "Sistemas de Informação"
 }
 
 Como Utilizar
-
 1. Acessar o Perfil.
 2. Atualizar informações.
 3. Salvar alterações.
@@ -211,7 +170,6 @@ ESTRUTURAS DE DADOS DA SOLUÇÃO
 Usuário
 
 Armazena informações de identificação e acesso ao sistema.
-
 {
   "id": 1,
   "nome": "João Silva",
@@ -221,7 +179,6 @@ Armazena informações de identificação e acesso ao sistema.
 Tarefa
 
 Armazena as atividades cadastradas pelo estudante.
-
 {
   "id": 101,
   "titulo": "Trabalho de Engenharia de Software",
@@ -231,7 +188,6 @@ Armazena as atividades cadastradas pelo estudante.
 Sessão de Estudo
 
 Registra o tempo dedicado aos estudos.
-
 {
   "usuarioId": 1,
   "tempo": "02:30:00",
@@ -241,7 +197,6 @@ Registra o tempo dedicado aos estudos.
 Relatório
 
 Armazena dados consolidados de produtividade.
-
 {
   "horasEstudadas": 30,
   "tarefasConcluidas": 15
@@ -250,7 +205,6 @@ Armazena dados consolidados de produtividade.
 Alerta
 
 Armazena notificações e lembretes do sistema.
-
 {
   "id": 1,
   "mensagem": "Você possui atividades pendentes."
