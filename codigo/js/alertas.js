@@ -1,13 +1,12 @@
 // Rafael Queiroz Vilaça - Alertas inteligentes
 function carregarJS() {
-    // chama a API do json 
-    const API = "http://localhost:3000/alertas"
+    const APIAlertas = `http://localhost:3000/alertas`
 
     let grafico
 
     // função ppra carregar alertas puxando do json
     async function carregarAlertas() {
-        const resposta = await fetch(API)
+        const resposta = await fetch(APIAlertas)
         const alertas = await resposta.json()
 
         montarTabela(alertas)
@@ -17,11 +16,11 @@ function carregarJS() {
 
     window.onload = () => carregarAlertas()
 
-// salvar alerta no json
+    // salvar alerta no json
     async function salvarAlerta(event) {
         event.preventDefault()
 
-        const resposta = await fetch(API)
+        const resposta = await fetch(APIAlertas)
         const alertas = await resposta.json()
 
         const idEl = document.querySelector('#id')
@@ -36,7 +35,7 @@ function carregarJS() {
         }
 
         if (idEl.value) {
-            await fetch(`${API}/${idEl.value}`, {
+            await fetch(`${APIAlertas}/${idEl.value}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
@@ -47,12 +46,12 @@ function carregarJS() {
                 })
             })
 
-        } 
+        }
         else {
-            const resposta = await fetch(API)
+            const resposta = await fetch(APIAlertas)
             const alertas = await resposta.json()
 
-            await fetch(API, {
+            await fetch(APIAlertas, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -70,14 +69,14 @@ function carregarJS() {
     const formAlertaEl = document.querySelector("#formAlerta")
     formAlertaEl.addEventListener("submit", salvarAlerta)
 
-//excluir um alerta do json
+    //excluir um alerta do json
     async function excluir(id) {
         const confirmar = confirm("Deseja excluir o alerta?")
 
-        if (!confirmar) 
+        if (!confirmar)
             return
 
-        await fetch(`${API}/${id}`, {
+        await fetch(`${APIAlertas}/${id}`, {
             method: "DELETE"
         })
 
@@ -110,8 +109,8 @@ function carregarJS() {
 
         const botoesExcluirEl = document.querySelectorAll('.excluir')
 
-// coloca event listeners de click em cada um dos botões 
-        for(let botaoExcluirEl of botoesExcluirEl) {
+        // coloca event listeners de click em cada um dos botões 
+        for (let botaoExcluirEl of botoesExcluirEl) {
             botaoExcluirEl.addEventListener('click', (e) => {
                 const botaoEl = e.currentTarget
                 const trEl = e.currentTarget.closest('tr')
@@ -121,7 +120,7 @@ function carregarJS() {
         }
     }
 
-//montar os cards com os alertas
+    //montar os cards com os alertas
     function montarCards(alertas) {
         const cardsEl = document.querySelector("#cardsAlertas")
         cardsEl.innerHTML = ""
@@ -151,7 +150,7 @@ function carregarJS() {
         })
     }
 
-//pesquisar um aluno na tabela de elementos
+    //pesquisar um aluno na tabela de elementos
     function pesquisar() {
         const termo = pesquisa.value.toLowerCase()
         const linhasEl = tabelaAlertas.querySelectorAll("tr")
@@ -165,7 +164,7 @@ function carregarJS() {
     const pesquisaEl = document.querySelector("#pesquisa")
     pesquisaEl.addEventListener("keyup", pesquisar)
 
-//montar um gráfico baseado na produtividade de cada aluno
+    //montar um gráfico baseado na produtividade de cada aluno
     function montarGrafico(alertas) {
         const tipos = {
             produtividade: 0,
@@ -180,7 +179,7 @@ function carregarJS() {
 
         const graficoEl = document.querySelector("#grafico")
 
-        if (grafico) 
+        if (grafico)
             grafico.destroy()
 
         grafico = new Chart(graficoEl, {
