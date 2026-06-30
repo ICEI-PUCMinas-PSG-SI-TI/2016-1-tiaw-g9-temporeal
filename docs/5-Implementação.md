@@ -167,7 +167,7 @@ Como Utilizar
 
 ## ESTRUTURAS DE DADOS DA SOLUÇÃO ##
 
-Usuário
+# Usuário
 
 Armazena informações de identificação e acesso ao sistema.
 {
@@ -176,7 +176,7 @@ Armazena informações de identificação e acesso ao sistema.
   "email": "joao@email.com"
 }
 
-Tarefa
+# Tarefa
 
 Armazena as atividades cadastradas pelo estudante.
 {
@@ -185,7 +185,7 @@ Armazena as atividades cadastradas pelo estudante.
   "status": "Em andamento"
 }
 
-Sessão de Estudo
+# Sessão de Estudo
 
 Registra o tempo dedicado aos estudos.
 {
@@ -194,7 +194,7 @@ Registra o tempo dedicado aos estudos.
   "data": "2025-06-30"
 }
 
-Relatório
+# Relatório
 
 Armazena dados consolidados de produtividade.
 {
@@ -202,7 +202,7 @@ Armazena dados consolidados de produtividade.
   "tarefasConcluidas": 15
 }
 
-Alerta
+# Alerta
 
 Armazena notificações e lembretes do sistema.
 {
