@@ -213,8 +213,11 @@ Armazena notificações e lembretes do sistema.
 ## Tecnologias Utilizadas
 
 Durante a realização das atividades solicitadas, as seguintes ferramentas foram utilizadas:
- 
- Figma (prototipo interativo e fluxo de telas), Miro (wireframe, personas e proposta de valor), Google Docs (histórias de usuários), Canva (powerpoint) 
+| Tecnologia | Informação |
+| HTML | Estruturas das páginas |
+| CSS | Estilização e layout |
+| JavaScript | Lógica e interatividade |
+| Local Storage | Persistência dos dados |
 
 
 ## Arquitetura da solução
