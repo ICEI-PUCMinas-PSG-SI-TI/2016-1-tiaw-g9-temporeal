@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">
+        <span class="logo-selo"><i class="fa-regular fa-clock"></i></span>
+        <span class="logo-texto">tempo real</span>
+    </div>
+
+    <div class="header-right">
+        <button id="toggleTema" class="btn-icon" title="Alternar tema">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <img id="fotoTopo"
+             class="avatar"
+             src="https://via.placeholder.com/50"
+             alt="Foto do usuário">
+
+        <div class="usuario-header">
+            <strong id="nomeHeader">João Silva</strong>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="titulo">
+        <h1 data-i18n="tituloPerfil">Perfil do aluno</h1>
+        <p data-i18n="subtituloPerfil">Gerencie suas informações pessoais e preferências da conta.</p>
+    </section>
+
+    <section class="perfil-card">
+        <div class="perfil-info">
+            <div class="foto-container">
+                <img id="fotoPerfil"
+                     src="https://via.placeholder.com/150"
+                     alt="Foto de perfil">
+
+                <label for="fotoInput" class="camera-btn">
+                    <i class="fa-solid fa-camera"></i>
+                </label>
+
+                <input
+                    type="file"
+                    id="fotoInput"
+                    accept="image/*">
+            </div>
+
+            <div>
+                <h2 id="nomePerfil">João Silva</h2>
+                <p id="emailPerfil">joao@email.com</p>
+                <p><span data-i18n="membroDesdeLabel">Membro desde:</span> <span id="membroDesde">12/03/2024</span></p>
+            </div>
+        </div>
+        <span class="selo-aluno">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span data-i18n="badgeAluno">Aluno</span>
+        </span>
+    </section>
+
+    <section class="grid">
+
+        <div class="card">
+            <h3 data-i18n="infoPessoais">Informações pessoais</h3>
+
+            <form id="formPerfil" novalidate>
+                <label for="nome" data-i18n="labelNome">Nome completo</label>
+                <input type="text" id="nome" required>
+
+                <label for="email" data-i18n="labelEmail">E-mail</label>
+                <input type="email" id="email" required>
+
+                <label for="telefone" data-i18n="labelTelefone">Telefone</label>
+                <input type="text" id="telefone" placeholder="(00) 00000-0000">
+
+                <label for="fuso" data-i18n="labelFuso">Fuso horário</label>
+                <select id="fuso">
+                    <option value="GMT-03:00 Brasília">(GMT-03:00) Brasília</option>
+                    <option value="GMT-04:00 Manaus">(GMT-04:00) Manaus</option>
+                    <option value="GMT-05:00 Acre">(GMT-05:00) Acre</option>
+                </select>
+
+                <button type="submit" id="salvarPerfil" class="btn-principal" data-i18n="btnSalvarPerfil">
+                    Salvar alterações
+                </button>
+            </form>
+        </div>
+
+    </section>
+
+    <section class="card">
+        <h3 data-i18n="seguranca">Segurança</h3>
+
+        <div class="item-menu" id="irAlterarSenha">
+            <span><i class="fa-solid fa-lock"></i> <span data-i18n="alterarSenha">Alterar senha</span></span>
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
+    </section>
+
+    <section class="card">
+        <h3 data-i18n="conta">Conta</h3>
+
+        <div class="item-menu danger" id="irExcluirConta">
+            <span><i class="fa-solid fa-trash"></i> <span data-i18n="excluirConta">Excluir conta</span></span>
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
+    </section>
+</main>
+
+<div id="toast" class="toast"></div>
+
+<script src="perfil.js"></script>
+
+</body>
+</html>
