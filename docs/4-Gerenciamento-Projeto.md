@@ -36,7 +36,7 @@ Atualizado em: 30/06/2026
 | Izhak         | Product design e wireframe | ✔️    | 14/04/2026       |
 | Luiz          | Product discovery e metodologia | ✔️     | 14/04/2026       |
 | João          | Contexto e metodologia     | ✔️    | 14/04/2026       |
-| Rafael        | Metodologia | 09/04/2026     | ✔️    | 14/04/2026       |
+| Rafael        | Metodologia  | ✔️    | 14/04/2026       |
 | Giovanna      | Perfil de usuário e monitoramento de tempo |  ✔️  | Sprint 1 e 2 |
 | Izhak         | Recordes e técnica pomodoro |  ✔️  | Sprint 1 e 2 |
 | Luiz          | Cadastro de usuário e home page |  ✔️  | Sprint 1 e 2 |
