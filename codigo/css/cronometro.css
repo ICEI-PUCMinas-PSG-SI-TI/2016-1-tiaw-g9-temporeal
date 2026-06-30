@@ -1,6 +1,6 @@
 .container-timer {
     background-color: #ffffff;
-    color: #212529;
+    color: #0062ff;
     padding: 40px;
     border-radius: 20px;
     text-align: center;
@@ -12,10 +12,11 @@
     font-size: 72px;
     font-weight: bold;
     margin: 20px 0 30px;
+    
 }
 
 #status {
-    color: #414141;
+    color: #070707;
     margin-bottom: 10px;
 }
 

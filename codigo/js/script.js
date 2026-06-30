@@ -2,7 +2,7 @@
 
 const API_USUARIOS = "http://localhost:3000/usuarios";
 
-// ─── Proteção de rotas ────────────────────────────────────────────────────────
+//  Proteção de rotas 
 // Páginas que NÃO precisam de login
 const PAGINAS_PUBLICAS = ["index.html", "cadastro.html"];
 
@@ -21,7 +21,7 @@ const PAGINAS_PUBLICAS = ["index.html", "cadastro.html"];
   }
 })();
 
-// ─── Preenche elementos comuns (nome, tipo) em qualquer página ───────────────
+//  Preenche elementos comuns (nome, tipo) em qualquer página 
 const usuarioLogado = JSON.parse(sessionStorage.getItem("usuarioLogado"));
 if (usuarioLogado) {
   const elNome = document.getElementById("nomeUsuario");
@@ -34,7 +34,7 @@ if (usuarioLogado) {
   if (elMensagem) elMensagem.innerHTML = "Bem-vindo, " + usuarioLogado.nome + "!";
 }
 
-// ─── Login ────────────────────────────────────────────────────────────────────
+// login 
 async function login() {
   const email = document.getElementById("emailLogin").value.trim();
   const senha = document.getElementById("senhaLogin").value;
@@ -62,7 +62,7 @@ async function login() {
   }
 }
 
-// ─── Cadastro ─────────────────────────────────────────────────────────────────
+// cadastro
 async function cadastrar() {
   const senha = document.getElementById("senha").value;
   const confirmarSenha = document.getElementById("confirmarSenha").value;
@@ -121,13 +121,13 @@ async function cadastrar() {
   }
 }
 
-// ─── Logout ───────────────────────────────────────────────────────────────────
+//  Logout 
 function logout() {
   sessionStorage.removeItem("usuarioLogado");
   window.location.href = "index.html";
 }
 
-// ─── Utilitário ───────────────────────────────────────────────────────────────
+//  Utilitário 
 function mostrarErro(el, msg) {
   if (!el) { alert(msg); return; }
   el.textContent = msg;
