@@ -54,14 +54,7 @@
       "id": "0vo81ygEWyo"
     }
   ],
-  "sessoes": [
-    {
-      "modo": "cronometro",
-      "tempo": "00:02:22",
-      "data": "29/06/2026, 21:22:07",
-      "id": "O5YawJHNAY0"
-    }
-  ],
+  "sessoes": [],
   "alertas": [
     {
       "aluno": "Pedro",
@@ -71,6 +64,15 @@
       "titulo": "ves",
       "mensagem": "as",
       "id": "SXTXRQ5XgbU"
+    },
+    {
+      "aluno": "Pedro",
+      "curso": "ADS",
+      "tipo": "produtividade",
+      "nivel": "baixo",
+      "titulo": "ves",
+      "mensagem": "Bem-vindo, izhak sena!",
+      "id": "US3hSVbwrfw"
     }
   ],
   "noticias": [
