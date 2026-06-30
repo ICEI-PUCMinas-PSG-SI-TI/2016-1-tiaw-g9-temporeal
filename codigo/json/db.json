@@ -23,6 +23,18 @@
       "senha": "123456",
       "tipo": "professor",
       "dashboard": "professor"
+    },
+    {
+      "nome": "izhak sena",
+      "telefone": "988257465",
+      "cidade": "Vespasiano",
+      "tipo": "aluno",
+      "categoria": "Aluno",
+      "escola": "ves",
+      "email": "se@gmail.com",
+      "senha": "123",
+      "dashboard": "aluno",
+      "id": "ALaFQbwuTIU"
     }
   ],
   "tarefas": [],

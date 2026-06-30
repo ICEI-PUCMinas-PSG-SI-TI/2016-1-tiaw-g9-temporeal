@@ -1,57 +1,135 @@
-// script.js - Luiz (Login, Cadastro e logout)
+// script.js - Login, Cadastro e Logout
 
-function cadastrar() {
-    const senha = document.getElementById("senha").value;
-    const confirmarSenha = document.getElementById("confirmarSenha").value;
+const API_USUARIOS = "http://localhost:3000/usuarios";
 
-    if (senha !== confirmarSenha) {
-        //alert("As senhas são diferentes!");
-        return;
-    }
+// ─── Proteção de rotas ────────────────────────────────────────────────────────
+// Páginas que NÃO precisam de login
+const PAGINAS_PUBLICAS = ["index.html", "cadastro.html"];
 
-    const usuario = {
-        nome: document.getElementById("nome").value,
-        telefone: document.getElementById("telefone").value,
-        cidade: document.getElementById("cidade").value,
-        categoria: document.getElementById("categoria").value,
-        escola: document.getElementById("escola").value,
-        email: document.getElementById("email").value,
-        senha: senha
-    };
+(function protegerRota() {
+  const pagina = window.location.pathname.split("/").pop() || "index.html";
+  const publica = PAGINAS_PUBLICAS.some(p => pagina === p);
+  const logado = sessionStorage.getItem("usuarioLogado");
 
-    localStorage.setItem("usuario", JSON.stringify(usuario));
-    //alert("Cadastro realizado com sucesso!");
+  if (!publica && !logado) {
     window.location.href = "index.html";
-}
+  }
 
-function login() {
-    const email = document.getElementById("emailLogin").value;
-    const senha = document.getElementById("senhaLogin").value;
-    const usuario = JSON.parse(localStorage.getItem("usuario"));
+  if (publica && logado && pagina === "index.html") {
+    // já logado tentando abrir o login: redireciona pra home
+    window.location.href = "home.html";
+  }
+})();
 
-    if (usuario && usuario.email === email && usuario.senha === senha) {
-        
-        localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
-        window.location.href = "home.html";
-    } else {
-        //alert("Email ou senha incorretos!");
-    }
-}
-
-function logout() {
-    localStorage.removeItem("usuarioLogado");
-    window.location.href = "index.html";
-}
-
-// coloca nome do usuário na home
-const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+// ─── Preenche elementos comuns (nome, tipo) em qualquer página ───────────────
+const usuarioLogado = JSON.parse(sessionStorage.getItem("usuarioLogado"));
 if (usuarioLogado) {
-    const mensagem = document.getElementById("mensagem");
-    if (mensagem) mensagem.innerHTML = "Bem-vindo, " + usuarioLogado.nome + "!";
+  const elNome = document.getElementById("nomeUsuario");
+  if (elNome) elNome.textContent = usuarioLogado.nome;
 
-    const nomeUsuario = document.getElementById("nomeUsuario");
-    if (nomeUsuario) nomeUsuario.textContent = usuarioLogado.nome;
+  const elTipo = document.getElementById("tipoUsuario");
+  if (elTipo) elTipo.textContent = usuarioLogado.tipo || usuarioLogado.categoria || "";
 
-    const tipoUsuario = document.getElementById("tipoUsuario");
-    if (tipoUsuario) tipoUsuario.textContent = usuarioLogado.categoria || "";
+  const elMensagem = document.getElementById("mensagem");
+  if (elMensagem) elMensagem.innerHTML = "Bem-vindo, " + usuarioLogado.nome + "!";
+}
+
+// ─── Login ────────────────────────────────────────────────────────────────────
+async function login() {
+  const email = document.getElementById("emailLogin").value.trim();
+  const senha = document.getElementById("senhaLogin").value;
+  const erroEl = document.getElementById("erroLogin");
+
+  if (!email || !senha) {
+    mostrarErro(erroEl, "Preencha email e senha.");
+    return;
+  }
+
+  try {
+    const resposta = await fetch(`${API_USUARIOS}?email=${encodeURIComponent(email)}`);
+    const usuarios = await resposta.json();
+    const usuario = usuarios.find(u => u.email === email && u.senha === senha);
+
+    if (!usuario) {
+      mostrarErro(erroEl, "Email ou senha incorretos.");
+      return;
+    }
+
+    sessionStorage.setItem("usuarioLogado", JSON.stringify(usuario));
+    window.location.href = "home.html";
+  } catch (e) {
+    mostrarErro(erroEl, "Erro ao conectar. Verifique se o json-server está rodando.");
+  }
+}
+
+// ─── Cadastro ─────────────────────────────────────────────────────────────────
+async function cadastrar() {
+  const senha = document.getElementById("senha").value;
+  const confirmarSenha = document.getElementById("confirmarSenha").value;
+  const erroEl = document.getElementById("erroCadastro");
+
+  if (senha !== confirmarSenha) {
+    mostrarErro(erroEl, "As senhas não coincidem.");
+    return;
+  }
+
+  const nome = document.getElementById("nome").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const categoria = document.getElementById("categoria").value;
+
+  if (!nome || !email || !categoria || !senha) {
+    mostrarErro(erroEl, "Preencha todos os campos obrigatórios.");
+    return;
+  }
+
+  // Verifica se email já existe
+  try {
+    const check = await fetch(`${API_USUARIOS}?email=${encodeURIComponent(email)}`);
+    const existentes = await check.json();
+    if (existentes.length > 0) {
+      mostrarErro(erroEl, "Este email já está cadastrado.");
+      return;
+    }
+  } catch (e) {
+    mostrarErro(erroEl, "Erro ao conectar ao servidor.");
+    return;
+  }
+
+  const usuario = {
+    nome,
+    telefone: document.getElementById("telefone").value,
+    cidade: document.getElementById("cidade").value,
+    tipo: categoria.toLowerCase(),
+    categoria,
+    escola: document.getElementById("escola").value,
+    email,
+    senha,
+    dashboard: categoria.toLowerCase()
+  };
+
+  try {
+    const resposta = await fetch(API_USUARIOS, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(usuario)
+    });
+    if (!resposta.ok) throw new Error();
+    alert("Cadastro realizado com sucesso!");
+    window.location.href = "index.html";
+  } catch (e) {
+    mostrarErro(erroEl, "Erro ao cadastrar. Tente novamente.");
+  }
+}
+
+// ─── Logout ───────────────────────────────────────────────────────────────────
+function logout() {
+  sessionStorage.removeItem("usuarioLogado");
+  window.location.href = "index.html";
+}
+
+// ─── Utilitário ───────────────────────────────────────────────────────────────
+function mostrarErro(el, msg) {
+  if (!el) { alert(msg); return; }
+  el.textContent = msg;
+  el.style.display = "block";
 }
