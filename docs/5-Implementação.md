@@ -210,7 +210,7 @@ Armazena notificações e lembretes do sistema.
   "mensagem": "Você possui atividades pendentes."
 }
 
-## Tecnologias Utilizadas
+## Tecnologias Utilizadas ##
 
 Durante a realização das atividades solicitadas, as seguintes ferramentas foram utilizadas:
 | Tecnologia | Informação |
