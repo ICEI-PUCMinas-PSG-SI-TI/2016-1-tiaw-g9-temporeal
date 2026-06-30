@@ -1,6 +1,11 @@
 # Gerenciamento de Projeto
 
-> Aqui será feito o gerenciamento das tarefas de implementação do projeto.
+O grupo trabalhou com base no método Scrum que é um framework ágil usado para gerenciar e desenvolver produtos complexos. Ele organiza o trabalho em ciclos iterativos chamados Sprints, promovendo entregas contínuas de valor, colaboração em equipe e rápida adaptação a mudanças.
+- Giovanna Luisa Quintão de Freitas: responsável pelos designs, apresentações e organização.
+- Luiz Henrique Macedo: responável pelos testes, pesquisas e interfaces.
+- Izhak Madeira De Sena: responável pelo GitHub, documentação e protótipos.
+- João Pedro Sousa Costa: responsável pelos wireframes e pesquisas.
+- Rafael Queiroz Vilaça: responsável pelas pesquisas e soluções.
 
 ## Divisão de Papéis
 
@@ -43,7 +48,7 @@ As ferramentas empregadas no projeto são:
 
 - Canva: criação de apresentações https://canva.link/vdmi9bbd7uricvt
 - Miro: organização de ideias https://miro.com/
-- GitHub Classroom: gernciamneto do projeto https://github.com/ICEI-PUCMinas-PSG-SI-TI/2016-1-tiaw-g9-temporeal.git
+- GitHub Classroom: gerenciamneto do projeto https://github.com/ICEI-PUCMinas-PSG-SI-TI/2016-1-tiaw-g9-temporeal.git
 - Figma: criação de protótipos e wireframes https://www.figma.com/
 - Discord: meio de comunicação da equipe
 
