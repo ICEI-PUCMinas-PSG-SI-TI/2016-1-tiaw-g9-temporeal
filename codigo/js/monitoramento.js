@@ -1,8 +1,36 @@
 const API = 'http://localhost:3000'
 
+// tarefas.html guarda a data como DD/MM/AAAA; o dashboard trabalha em ISO (AAAA-MM-DD)
+function paraISO(dataBR) {
+  if (!dataBR) return ''
+  const p = dataBR.split('/')
+  if (p.length !== 3) return dataBR
+  return p[2] + '-' + p[1] + '-' + p[0]
+}
+
+function paraBR(dataISO) {
+  if (!dataISO) return ''
+  const p = dataISO.split('-')
+  if (p.length !== 3) return dataISO
+  return p[2] + '/' + p[1] + '/' + p[0]
+}
+
+// converte uma tarefa (schema de tarefas.html: titulo, tipo, data BR, duracaoHoras, duracaoMinutos)
+// para o formato que o dashboard de monitoramento usa (titulo, categoria, horas decimais, data ISO)
+function normalizar(tarefa) {
+  return {
+    id: tarefa.id,
+    titulo: tarefa.titulo,
+    categoria: tarefa.tipo,
+    horas: Number(tarefa.duracaoHoras || 0) + Number(tarefa.duracaoMinutos || 0) / 60,
+    data: paraISO(tarefa.data)
+  }
+}
+
 async function carregarAtividades() {
-  const resposta = await fetch(API + '/atividades')
-  const atividades = await resposta.json()
+  const resposta = await fetch(API + '/tarefas')
+  const tarefas = await resposta.json()
+  const atividades = tarefas.map(normalizar)
 
   const hoje = new Date().toISOString().split('T')[0]
 
@@ -15,7 +43,7 @@ async function carregarAtividades() {
   const elPercentual = document.getElementById('percentual')
   const elBarra = document.getElementById('barraProgresso')
 
-  if (elTempo) elTempo.textContent = horasHoje + 'h'
+  if (elTempo) elTempo.textContent = horasHoje.toFixed(1) + 'h'
   if (elPercentual) elPercentual.textContent = percentual + '%'
   if (elBarra) elBarra.style.width = percentual + '%'
 
@@ -31,7 +59,7 @@ async function carregarAtividades() {
   if (elSequencia) elSequencia.textContent = calcularSequencia(atividades) + ' dias'
 
   const elTotal = document.getElementById('totalHoras')
-  if (elTotal) elTotal.textContent = totalHoras
+  if (elTotal) elTotal.textContent = totalHoras.toFixed(1)
 
   renderizarLista(atividades)
 }
@@ -77,7 +105,7 @@ function renderizarLista(atividades) {
         <div class="d-flex justify-content-between align-items-start">
           <div>
             <strong>${a.titulo}</strong>
-            <p class="text-secondary mb-1 small">${a.categoria} · ${a.horas}h · ${formatarData(a.data)}</p>
+            <p class="text-secondary mb-1 small">${a.categoria} · ${a.horas.toFixed(1)}h · ${formatarData(a.data)}</p>
           </div>
           <div class="d-flex gap-2">
             <button class="btn btn-sm btn-outline-primary" onclick="prepararEdicao('${a.id}')">
@@ -100,22 +128,28 @@ if (formAtividade) {
   formAtividade.addEventListener('submit', async function(e) {
     e.preventDefault()
 
+    const horasDecimal = parseFloat(document.getElementById('horas').value) || 0
+    const duracaoHoras = Math.floor(horasDecimal)
+    const duracaoMinutos = Math.round((horasDecimal - duracaoHoras) * 60)
+
     const pacote = {
-      titulo:    document.getElementById('titulo').value,
-      categoria: document.getElementById('categoria').value,
-      horas:     document.getElementById('horas').value,
-      data:      document.getElementById('data').value
+      titulo: document.getElementById('titulo').value,
+      descricao: '',
+      tipo: document.getElementById('categoria').value,
+      data: paraBR(document.getElementById('data').value),
+      duracaoHoras: duracaoHoras,
+      duracaoMinutos: duracaoMinutos
     }
 
     if (idEditando) {
-      await fetch(API + '/atividades/' + idEditando, {
+      await fetch(API + '/tarefas/' + idEditando, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(pacote)
       })
       idEditando = null
     } else {
-      await fetch(API + '/atividades', {
+      await fetch(API + '/tarefas', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(pacote)
@@ -128,13 +162,13 @@ if (formAtividade) {
 }
 
 async function prepararEdicao(id) {
-  const resposta = await fetch(API + '/atividades/' + id)
-  const atividade = await resposta.json()
+  const resposta = await fetch(API + '/tarefas/' + id)
+  const tarefa = await resposta.json()
 
-  document.getElementById('titulo').value    = atividade.titulo
-  document.getElementById('categoria').value = atividade.categoria
-  document.getElementById('horas').value     = atividade.horas
-  document.getElementById('data').value      = atividade.data
+  document.getElementById('titulo').value    = tarefa.titulo
+  document.getElementById('categoria').value = tarefa.tipo
+  document.getElementById('horas').value     = (Number(tarefa.duracaoHoras || 0) + Number(tarefa.duracaoMinutos || 0) / 60).toFixed(2)
+  document.getElementById('data').value      = paraISO(tarefa.data)
 
   idEditando = id
   formAtividade.scrollIntoView()
@@ -142,15 +176,15 @@ async function prepararEdicao(id) {
 
 async function deletarAtividade(id) {
   if (!confirm('Quer mesmo apagar essa atividade?')) return
-  await fetch(API + '/atividades/' + id, { method: 'DELETE' })
+  await fetch(API + '/tarefas/' + id, { method: 'DELETE' })
   carregarAtividades()
 }
 
 const pesquisa = document.getElementById('pesquisa')
 if (pesquisa) {
   pesquisa.addEventListener('input', async function() {
-    const resposta = await fetch(API + '/atividades')
-    const atividades = await resposta.json()
+    const resposta = await fetch(API + '/tarefas')
+    const atividades = (await resposta.json()).map(normalizar)
     renderizarLista(atividades)
   })
 }
