@@ -105,11 +105,14 @@
 
 .pontos{
     position: absolute;
-    width: 100%;
+      width: 100%;
     display: flex;
     justify-content: space-between;
     top: 40%;
+    bottom: 0;
+    align-items: flex-end;
 }
+
 
 .pontos span{
     width: 14px;
@@ -176,7 +179,7 @@
 
 @media(max-width:768px){
     .topo h1{ font-size: 28px; }
-    .card-topo{ flex-direction: column; align-items: flex-start; }
+    .dia-check{ width: 40px; height: 40px; font-size: 12px; }
     .circulo{ width: 90px; height: 90px; font-size: 22px; }
     .card-topo h1{ font-size: 38px; }
     .dia-check{ width: 40px; height: 40px; font-size: 12px; }

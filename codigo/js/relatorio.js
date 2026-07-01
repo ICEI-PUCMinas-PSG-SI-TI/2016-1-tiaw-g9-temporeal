@@ -3,7 +3,7 @@ const API = "http://localhost:3000/recados";
 
 
 const usuarioLogado =
-JSON.parse(localStorage.getItem("usuarioLogado"));
+JSON.parse(sessionStorage.getItem("usuarioLogado"));
 
 
 
@@ -213,7 +213,7 @@ carregarRecados();
 function logout(){
 
 
-localStorage.removeItem("usuarioLogado");
+sessionStorage.removeItem("usuarioLogado");
 
 
 window.location.href="index.html";

@@ -5,7 +5,7 @@ const API_TAREFAS = "http://localhost:3000/tarefas";
 
 
 const usuarioLogado =
-JSON.parse(localStorage.getItem("usuarioLogado"));
+JSON.parse(sessionStorage.getItem("usuarioLogado"));
 
 
 
@@ -219,7 +219,7 @@ error
 function logout(){
 
 
-localStorage.removeItem("usuarioLogado");
+sessionStorage.removeItem("usuarioLogado");
 
 
 window.location.href="index.html";
