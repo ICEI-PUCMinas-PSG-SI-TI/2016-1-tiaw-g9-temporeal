@@ -21,7 +21,6 @@
 
 <div class="d-flex">
 
-  <!-- Sidebar -->
   <div class="sidebar shadow-sm p-4">
     <h2 class="text-primary mb-5"><i class="bi bi-phone"></i> Tempo Real</h2>
     <ul class="nav flex-column">
@@ -64,10 +63,8 @@
     </div>
   </div>
 
-  <!-- Conteúdo -->
   <div class="flex-grow-1 p-4">
 
-    <!-- Cabeçalho -->
     <div class="d-flex justify-content-between align-items-center mb-4">
       <div>
         <h2 id="mensagem" class="mb-0"></h2>
@@ -85,7 +82,6 @@
       </a>
     </div>
 
-    <!-- Stats -->
     <div class="row g-4 mb-4">
       <div class="col-md-3">
         <div class="card stat-card shadow-sm">
@@ -117,7 +113,6 @@
       </div>
     </div>
 
-    <!-- Tarefas + Alertas -->
     <div class="row g-4 mb-4">
       <div class="col-md-7">
         <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
@@ -139,7 +134,7 @@
       </div>
     </div>
 
-    <!-- Atividades + Notícias -->
+
     <div class="row g-4">
       <div class="col-md-4">
         <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
@@ -164,113 +159,227 @@
 <script src="js/script.js"></script>
 <script>
 const API = "http://localhost:3000";
+let _homeInterval = null;
 
 async function carregarHome() {
-  const [tarefas, atividades, alertas, sessoes, noticias] = await Promise.all([
-    fetch(`${API}/tarefas`).then(r => r.json()).catch(() => []),
-    fetch(`${API}/atividades`).then(r => r.json()).catch(() => []),
-    fetch(`${API}/alertas`).then(r => r.json()).catch(() => []),
-    fetch(`${API}/sessoes`).then(r => r.json()).catch(() => []),
-    fetch(`${API}/noticias`).then(r => r.json()).catch(() => [])
-  ]);
+  let tarefas = [], atividades = [], alertas = [], sessoes = [], noticias = [];
 
-  // Avatar
+  try {
+    [tarefas, atividades, alertas, sessoes, noticias] = await Promise.all([
+      fetch(`${API}/tarefas`).then(r => r.ok ? r.json() : []).catch(() => []),
+      fetch(`${API}/atividades`).then(r => r.ok ? r.json() : []).catch(() => []),
+      fetch(`${API}/alertas`).then(r => r.ok ? r.json() : []).catch(() => []),
+      fetch(`${API}/sessoes`).then(r => r.ok ? r.json() : []).catch(() => []),
+      fetch(`${API}/noticias`).then(r => r.ok ? r.json() : []).catch(() => [])
+    ]);
+  } catch (e) {
+    console.warn("Erro ao carregar dados da home:", e);
+    return;
+  }
+
+  // ── avatar e usuário ──
   const user = JSON.parse(sessionStorage.getItem("usuarioLogado"));
   if (user) {
-    document.getElementById("avatarLetra").textContent = user.nome?.charAt(0).toUpperCase() || "?";
+    const elAvatar = document.getElementById("avatarLetra");
+    if (elAvatar) elAvatar.textContent = user.nome?.charAt(0).toUpperCase() || "?";
   }
 
-  // Stats
-  document.getElementById("statTarefas").textContent = tarefas.length;
-  document.getElementById("statTarefasLabel").textContent =
-    tarefas.length === 1 ? "tarefa cadastrada" : "tarefas cadastradas";
+  // Card das Tarefas 
+  const hoje = new Date();
+  hoje.setHours(0,0,0,0);
+  const tarefasPendentes = tarefas.filter(t => {
+    if (!t.data) return true;
+    return new Date(t.data + "T23:59:59") >= hoje;
+  });
 
+  const elStatTarefas = document.getElementById("statTarefas");
+  const elStatTarefasLabel = document.getElementById("statTarefasLabel");
+  if (elStatTarefas) {
+    elStatTarefas.textContent = tarefasPendentes.length;
+    animarNumero(elStatTarefas);
+  }
+  if (elStatTarefasLabel) {
+    const vencidas = tarefas.filter(t => t.data && new Date(t.data + "T23:59:59") < hoje).length;
+    if (vencidas > 0) {
+      elStatTarefasLabel.innerHTML = `<span class="text-danger">${vencidas} vencida${vencidas > 1 ? 's' : ''}</span> · ${tarefas.length} total`;
+    } else {
+      elStatTarefasLabel.textContent = tarefasPendentes.length === 1 ? "tarefa pendente" : "tarefas pendentes";
+    }
+  }
+
+  // Card dasHoras Estudadas 
   const totalHoras = atividades.reduce((s, a) => s + Number(a.horas || 0), 0);
-  document.getElementById("statHoras").textContent = totalHoras + "h";
+  const horasSessoesTotal = sessoes.reduce((s, sess) => s + tempoParaHoras(sess.tempo), 0);
+  const horasTotais = totalHoras + horasSessoesTotal;
 
-  const alertasAlto = alertas.filter(a => a.nivel === "alto").length;
-  document.getElementById("statAlertas").textContent = alertas.length;
-  document.getElementById("statAlertasLabel").textContent =
-    alertasAlto > 0 ? `${alertasAlto} de nível alto` : "nenhum de nível alto";
-
-  const ultimaSessao = sessoes.length > 0 ? sessoes[sessoes.length - 1] : null;
-  document.getElementById("ultimaSessao").textContent = ultimaSessao
-    ? `${ultimaSessao.tempo} (${ultimaSessao.modo})` : "nenhuma";
-
-  // Tarefas
-  const elTarefas = document.getElementById("listaTarefasHome");
-  if (tarefas.length === 0) {
-    elTarefas.innerHTML = `<p class="text-secondary small">Nenhuma tarefa. <a href="tarefas.html">Adicionar</a></p>`;
-  } else {
-    const proximas = [...tarefas].sort((a, b) => new Date(a.data) - new Date(b.data)).slice(0, 5);
-    elTarefas.innerHTML = proximas.map(t => `
-      <div class="tarefa-item ${t.tipo === 'prova' ? 'prova' : ''}">
-        <div class="d-flex justify-content-between align-items-start">
-          <div>
-            <strong>${t.titulo}</strong>
-            <p class="mb-0 text-secondary small">${t.descricao || ""}</p>
-          </div>
-          <div class="text-end ms-3">
-            <span class="badge ${t.tipo === 'prova' ? 'bg-danger' : 'bg-primary'}">${t.tipo}</span>
-            <p class="mb-0 text-muted small mt-1">${formatarData(t.data)}</p>
-          </div>
-        </div>
-      </div>`).join("");
+  const elStatHoras = document.getElementById("statHoras");
+  if (elStatHoras) {
+    elStatHoras.textContent = horasTotais.toFixed(1) + "h";
+    animarNumero(elStatHoras);
   }
 
-  // Alertas
+  // Card dos Alertas ─
+  const alertasAlto = alertas.filter(a => a.nivel === "alto").length;
+  const alertasMedio = alertas.filter(a => a.nivel === "medio").length;
+  const elStatAlertas = document.getElementById("statAlertas");
+  const elStatAlertasLabel = document.getElementById("statAlertasLabel");
+  if (elStatAlertas) {
+    elStatAlertas.textContent = alertas.length;
+    animarNumero(elStatAlertas);
+  }
+  if (elStatAlertasLabel) {
+    if (alertasAlto > 0) {
+      elStatAlertasLabel.innerHTML = `<span class="text-danger fw-bold">${alertasAlto} de nível alto</span>`;
+    } else if (alertasMedio > 0) {
+      elStatAlertasLabel.innerHTML = `<span class="text-warning">${alertasMedio} de nível médio</span>`;
+    } else {
+      elStatAlertasLabel.textContent = alertas.length === 0 ? "tudo certo!" : "todos de nível baixo";
+    }
+  }
+
+  // Card do cronômetro ──
+  const ultimaSessao = sessoes.length > 0 ? sessoes[sessoes.length - 1] : null;
+  const elUltimaSessao = document.getElementById("ultimaSessao");
+  if (elUltimaSessao) {
+    if (ultimaSessao) {
+      elUltimaSessao.innerHTML = `<strong>${ultimaSessao.tempo}</strong> (${ultimaSessao.modo})`;
+    } else {
+      elUltimaSessao.textContent = "nenhuma";
+    }
+  }
+
+  // ── proximas Tarefas ──
+  const elTarefas = document.getElementById("listaTarefasHome");
+  if (elTarefas) {
+    if (tarefas.length === 0) {
+      elTarefas.innerHTML = `
+        <div class="text-center py-3">
+          <i class="bi bi-clipboard-check text-secondary" style="font-size:2rem"></i>
+          <p class="text-secondary small mt-2 mb-0">Nenhuma tarefa cadastrada. <a href="tarefas.html" class="text-primary">Adicionar</a></p>
+        </div>`;
+    } else {
+      const proximas = [...tarefas].sort((a, b) => new Date(a.data) - new Date(b.data)).slice(0, 5);
+      elTarefas.innerHTML = proximas.map(t => {
+        const dataTarefa = new Date(t.data + "T23:59:59");
+        const vencida = dataTarefa < hoje;
+        const hojeCheck = t.data === hoje.toISOString().split("T")[0];
+        let badgeClasse = t.tipo === 'prova' ? 'bg-danger' : 'bg-primary';
+        let extraClasse = '';
+        let alertaTexto = '';
+        if (vencida) {
+          extraClasse = ' opacity-75';
+          alertaTexto = '<span class="badge bg-danger ms-1" style="font-size:.65rem">VENCIDA</span>';
+        } else if (hojeCheck) {
+          alertaTexto = '<span class="badge bg-warning text-dark ms-1" style="font-size:.65rem">HOJE</span>';
+        }
+        return `
+          <div class="tarefa-item ${t.tipo === 'prova' ? 'prova' : ''}${extraClasse}">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <strong>${t.titulo}</strong>${alertaTexto}
+                <p class="mb-0 text-secondary small">${t.descricao || ""}</p>
+              </div>
+              <div class="text-end ms-3">
+                <span class="badge ${badgeClasse}">${t.tipo || 'geral'}</span>
+                <p class="mb-0 text-muted small mt-1">${formatarData(t.data)}</p>
+              </div>
+            </div>
+          </div>`;
+      }).join("");
+    }
+  }
+
+  // alertas
   const CORES = { alto: "danger", medio: "warning", baixo: "success" };
   const ICONES = { produtividade: "bi-graph-up", faltas: "bi-calendar-x", tarefas: "bi-check2-square", redesSociais: "bi-phone" };
+  const LABELS = { produtividade: "Produtividade", faltas: "Faltas", tarefas: "Tarefas", redesSociais: "Redes Sociais" };
   const elAlertas = document.getElementById("listaAlertas");
-  if (alertas.length === 0) {
-    elAlertas.innerHTML = `<p class="text-secondary small"><i class="bi bi-check-circle text-success"></i> Nenhum alerta.</p>`;
-  } else {
-    elAlertas.innerHTML = alertas.slice(-5).reverse().map(a => `
-      <div class="mb-2 p-2 rounded border-start border-4 border-${CORES[a.nivel] || 'secondary'} bg-white shadow-sm">
-        <div class="d-flex justify-content-between">
-          <strong style="font-size:.85rem"><i class="bi ${ICONES[a.tipo] || 'bi-bell'} me-1"></i>${a.titulo}</strong>
-          <span class="badge bg-${CORES[a.nivel] || 'secondary'}">${a.nivel}</span>
-        </div>
-        <p class="mb-0 text-secondary" style="font-size:.78rem">${a.mensagem}</p>
-        <small class="text-muted">${a.aluno}</small>
-      </div>`).join("");
+  if (elAlertas) {
+    if (alertas.length === 0) {
+      elAlertas.innerHTML = `
+        <div class="text-center py-3">
+          <i class="bi bi-check-circle text-success" style="font-size:2rem"></i>
+          <p class="text-secondary small mt-2 mb-0">Nenhum alerta. Tudo certo!</p>
+        </div>`;
+    } else {
+      elAlertas.innerHTML = alertas.slice(-5).reverse().map(a => `
+        <div class="mb-2 p-2 rounded border-start border-4 border-${CORES[a.nivel] || 'secondary'} bg-white shadow-sm" style="transition: transform .2s; cursor:default" onmouseover="this.style.transform='translateX(4px)'" onmouseout="this.style.transform='none'">
+          <div class="d-flex justify-content-between">
+            <strong style="font-size:.85rem"><i class="bi ${ICONES[a.tipo] || 'bi-bell'} me-1"></i>${a.titulo}</strong>
+            <span class="badge bg-${CORES[a.nivel] || 'secondary'}">${a.nivel}</span>
+          </div>
+          <p class="mb-0 text-secondary" style="font-size:.78rem">${a.mensagem}</p>
+          <small class="text-muted">${a.aluno} · ${LABELS[a.tipo] || a.tipo}</small>
+        </div>`).join("");
+    }
   }
 
-  // Atividades
+  // recente
   const elAtiv = document.getElementById("listaAtividadesHome");
-  if (atividades.length === 0) {
-    elAtiv.innerHTML = `<p class="text-secondary small">Nenhuma atividade. <a href="monitoramento.html">Adicionar</a></p>`;
-  } else {
-    elAtiv.innerHTML = atividades.slice(-6).reverse().map(a => `
-      <div class="sessao-item d-flex justify-content-between">
-        <span><i class="bi bi-book text-success me-1"></i>${a.titulo}</span>
-        <span class="text-muted">${a.horas}h</span>
-      </div>`).join("");
+  if (elAtiv) {
+    if (atividades.length === 0) {
+      elAtiv.innerHTML = `
+        <div class="text-center py-3">
+          <i class="bi bi-activity text-secondary" style="font-size:2rem"></i>
+          <p class="text-secondary small mt-2 mb-0">Nenhuma atividade. <a href="monitoramento.html" class="text-primary">Adicionar</a></p>
+        </div>`;
+    } else {
+      const CATS_ICON = { "Estudo": "bi-book", "Trabalho": "bi-briefcase", "Leitura": "bi-journal-text" };
+      const CATS_COR = { "Estudo": "text-primary", "Trabalho": "text-success", "Leitura": "text-warning" };
+      elAtiv.innerHTML = atividades.slice(-6).reverse().map(a => `
+        <div class="sessao-item d-flex justify-content-between align-items-center" style="transition: background .2s; cursor:default; padding: .5rem .2rem; border-radius:6px" onmouseover="this.style.background='#f0f4ff'" onmouseout="this.style.background='transparent'">
+          <span>
+            <i class="bi ${CATS_ICON[a.categoria] || 'bi-star'} ${CATS_COR[a.categoria] || 'text-secondary'} me-1"></i>
+            ${a.titulo}
+            <small class="text-muted ms-1">${a.categoria || ''}</small>
+          </span>
+          <span class="badge bg-light text-dark">${a.horas}h</span>
+        </div>`).join("");
+    }
   }
 
-  // Notícias
+  // noticias
   const elNoticias = document.getElementById("listaNoticias");
-  if (noticias.length === 0) {
-    elNoticias.innerHTML = `<p class="text-secondary small">Nenhuma notícia.</p>`;
-  } else {
-    elNoticias.innerHTML = noticias.map(n => `
-      <a href="${n.link}" target="_blank" class="text-decoration-none">
-        <div class="noticia-card card p-3 mb-2 shadow-sm">
-          <p class="mb-1 fw-semibold text-dark" style="font-size:.88rem">${n.titulo}</p>
-          <p class="mb-1 text-secondary" style="font-size:.78rem">${n.descricao}</p>
-          <small class="text-muted">${n.nomeSite} · ${n.dataPublicacao}</small>
-        </div>
-      </a>`).join("");
+  if (elNoticias) {
+    if (noticias.length === 0) {
+      elNoticias.innerHTML = `<p class="text-secondary small">Nenhuma notícia disponível.</p>`;
+    } else {
+      elNoticias.innerHTML = noticias.map(n => `
+        <a href="${n.link}" target="_blank" class="text-decoration-none">
+          <div class="noticia-card card p-3 mb-2 shadow-sm" style="transition: transform .2s, box-shadow .2s" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 20px rgba(0,0,0,.12)'" onmouseout="this.style.transform='none';this.style.boxShadow=''">
+            <p class="mb-1 fw-semibold text-dark" style="font-size:.88rem">${n.titulo}</p>
+            <p class="mb-1 text-secondary" style="font-size:.78rem">${n.descricao}</p>
+            <small class="text-muted"><i class="bi bi-globe me-1"></i>${n.nomeSite} · ${n.dataPublicacao}</small>
+          </div>
+        </a>`).join("");
+    }
   }
 }
 
+//  uti
 function formatarData(dataISO) {
   if (!dataISO) return "—";
   const [ano, mes, dia] = dataISO.split("-");
   return `${dia}/${mes}/${ano}`;
 }
 
+function tempoParaHoras(tempoStr) {
+  if (!tempoStr) return 0;
+  const partes = tempoStr.split(":");
+  if (partes.length === 3) return Number(partes[0]) + Number(partes[1]) / 60 + Number(partes[2]) / 3600;
+  if (partes.length === 2) return Number(partes[0]) / 60 + Number(partes[1]) / 3600;
+  return 0;
+}
+
+function animarNumero(el) {
+  el.style.transition = "transform .3s ease";
+  el.style.transform = "scale(1.15)";
+  setTimeout(() => { el.style.transform = "scale(1)"; }, 300);
+}
+
+// ── Carrega + auto-refresh a cada 30s ──
 carregarHome();
+_homeInterval = setInterval(carregarHome, 30000);
 </script>
 
 </body>
