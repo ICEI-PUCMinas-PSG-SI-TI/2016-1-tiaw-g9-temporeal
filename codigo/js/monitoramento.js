@@ -8,13 +8,6 @@ function paraISO(dataBR) {
   return p[2] + '-' + p[1] + '-' + p[0]
 }
 
-function paraBR(dataISO) {
-  if (!dataISO) return ''
-  const p = dataISO.split('-')
-  if (p.length !== 3) return dataISO
-  return p[2] + '/' + p[1] + '/' + p[0]
-}
-
 // converte uma tarefa (schema de tarefas.html: titulo, tipo, data BR, duracaoHoras, duracaoMinutos)
 // para o formato que o dashboard de monitoramento usa (titulo, categoria, horas decimais, data ISO)
 function normalizar(tarefa) {
@@ -108,9 +101,6 @@ function renderizarLista(atividades) {
             <p class="text-secondary mb-1 small">${a.categoria} · ${a.horas.toFixed(1)}h · ${formatarData(a.data)}</p>
           </div>
           <div class="d-flex gap-2">
-            <button class="btn btn-sm btn-outline-primary" onclick="prepararEdicao('${a.id}')">
-              <i class="bi bi-pencil"></i>
-            </button>
             <button class="btn btn-sm btn-outline-danger" onclick="deletarAtividade('${a.id}')">
               <i class="bi bi-trash"></i>
             </button>
@@ -121,72 +111,15 @@ function renderizarLista(atividades) {
   `).join('')
 }
 
-const formAtividade = document.getElementById('formAtividade')
-let idEditando = null
-
-if (formAtividade) {
-  formAtividade.addEventListener('submit', async function(e) {
-    e.preventDefault()
-
-    const horasDecimal = parseFloat(document.getElementById('horas').value) || 0
-    const duracaoHoras = Math.floor(horasDecimal)
-    const duracaoMinutos = Math.round((horasDecimal - duracaoHoras) * 60)
-
-    const pacote = {
-      titulo: document.getElementById('titulo').value,
-      descricao: '',
-      tipo: document.getElementById('categoria').value,
-      data: paraBR(document.getElementById('data').value),
-      duracaoHoras: duracaoHoras,
-      duracaoMinutos: duracaoMinutos
-    }
-
-    if (idEditando) {
-      await fetch(API + '/tarefas/' + idEditando, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(pacote)
-      })
-      idEditando = null
-    } else {
-      await fetch(API + '/tarefas', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(pacote)
-      })
-    }
-
-    formAtividade.reset()
-    carregarAtividades()
-  })
-}
-
-async function prepararEdicao(id) {
-  const resposta = await fetch(API + '/tarefas/' + id)
-  const tarefa = await resposta.json()
-
-  document.getElementById('titulo').value    = tarefa.titulo
-  document.getElementById('categoria').value = tarefa.tipo
-  document.getElementById('horas').value     = (Number(tarefa.duracaoHoras || 0) + Number(tarefa.duracaoMinutos || 0) / 60).toFixed(2)
-  document.getElementById('data').value      = paraISO(tarefa.data)
-
-  idEditando = id
-  formAtividade.scrollIntoView()
-}
-
 async function deletarAtividade(id) {
-  if (!confirm('Quer mesmo apagar essa atividade?')) return
+  if (!confirm('Quer mesmo apagar essa atividade? (isso também remove a tarefa em Tarefas)')) return
   await fetch(API + '/tarefas/' + id, { method: 'DELETE' })
   carregarAtividades()
 }
 
 const pesquisa = document.getElementById('pesquisa')
 if (pesquisa) {
-  pesquisa.addEventListener('input', async function() {
-    const resposta = await fetch(API + '/tarefas')
-    const atividades = (await resposta.json()).map(normalizar)
-    renderizarLista(atividades)
-  })
+  pesquisa.addEventListener('input', carregarAtividades)
 }
 
 function formatarData(dataISO) {
