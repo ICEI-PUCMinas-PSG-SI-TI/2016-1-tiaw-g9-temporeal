@@ -35,9 +35,61 @@
       "senha": "123",
       "dashboard": "aluno",
       "id": "ALaFQbwuTIU"
+    },
+    {
+      "nome": "joao",
+      "telefone": "311111111",
+      "cidade": "santa luzia",
+      "tipo": "aluno",
+      "categoria": "Aluno",
+      "escola": "puc",
+      "email": "joao@joao.com",
+      "senha": "123456",
+      "dashboard": "aluno",
+      "id": "niwhjfhUr8E"
+    },
+    {
+      "nome": "izhak",
+      "telefone": "10239193",
+      "cidade": "vespasiano",
+      "tipo": "professor",
+      "categoria": "Professor",
+      "escola": "puc",
+      "email": "izhak@gmail.com",
+      "senha": "123",
+      "dashboard": "professor",
+      "id": "Q1riQaEm8wU"
     }
   ],
-  "tarefas": [],
+  "tarefas": [
+    {
+      "titulo": "prova fsi",
+      "descricao": "nao sei a materia",
+      "tipo": "prova",
+      "data": "02/07/2026",
+      "duracaoHoras": 2,
+      "duracaoMinutos": 30,
+      "id": "n3tNxtLAtHE"
+    },
+    {
+      "titulo": "sprint 3",
+      "descricao": "",
+      "tipo": "tarefa",
+      "data": "01/07/2026",
+      "duracaoHoras": 3,
+      "duracaoMinutos": 0,
+      "id": "ePLfdM53qhw"
+    },
+    {
+      "titulo": "prova atp",
+      "descricao": "estudar modulos, vetor e matriz",
+      "tipo": "tarefa",
+      "data": "",
+      "duracaoHoras": 1,
+      "duracaoMinutos": 20,
+      "id": "URxRiI3cnOk"
+    }
+  ],
   "atividades": [
     {
       "titulo": "Estudar algoritmo",
@@ -54,7 +106,14 @@
       "id": "0vo81ygEWyo"
     }
   ],
-  "sessoes": [],
+  "sessoes": [
+    {
+      "modo": "cronometro",
+      "tempo": "10:00:03",
+      "data": "30/06/2026, 22:14:29",
+      "id": "36DSuzYjG60"
+    }
+  ],
   "alertas": [
     {
       "aluno": "Pedro",
@@ -73,6 +132,15 @@
       "titulo": "ves",
       "mensagem": "Bem-vindo, izhak sena!",
       "id": "US3hSVbwrfw"
+    },
+    {
+      "aluno": "v",
+      "curso": "v",
+      "tipo": "produtividade",
+      "nivel": "baixo",
+      "titulo": "v",
+      "mensagem": "Bem-vindo, Luiz Henrique!",
+      "id": "Ewx06202-S0"
     }
   ],
   "noticias": [
@@ -118,6 +186,42 @@
       "nota": 9,
       "frequencia": 97,
       "status": "Excelente"
+    },
+    {
+      "id": "3",
+      "nome": "Luiz Henrique",
+      "nota": 0,
+      "frequencia": 74,
+      "status": "Ruim"
+    },
+    {
+      "id": "4",
+      "nome": "João da Silva",
+      "nota": 0,
+      "frequencia": 75,
+      "status": "Ruim"
+    },
+    {
+      "id": "5",
+      "nome": "Maria Oliveira",
+      "nota": 0,
+      "frequencia": 75,
+      "status": "Ruim"
+    },
+    {
+      "id": "ALaFQbwuTIU",
+      "nome": "izhak sena",
+      "nota": 0,
+      "frequencia": 75,
+      "status": "Ruim"
+    },
+    {
+    "recados": [
+    {
+      "id": "1",
+      "mensagem": "Não esquecer da entrega do trabalho de Matemática.",
+      "professor": "Maria Oliveira",
+      "data": "29/06/2026"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

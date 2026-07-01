@@ -1,25 +1,35 @@
-// função para calcular o tempo de publicação
-function calculaTempoPublicacao(dataPublicacao) {
-    let hoje = new Date();
-    return Math.floor(
-        (hoje - dataPublicacao) / (1000 * 60 * 60 * 24)
-    );
-}
+function carregarNoticiasJS() {
+    const tituloEl = document.querySelector('#titulo')
+    const descricaoEl = document.querySelector('#descricao')
+    const dataEl = document.querySelector('#data')
+    const horaEl = document.querySelector('#hora')
+    const siteEl = document.querySelector('#site')
+    const linkEl = document.querySelector('#link')
 
-// função para dividir data em partes e retorná-la no objeto Date
-function converterData(noticia) {
-    let partes = noticia.dataPublicacao.split("/");
-    return new Date(partes[2], partes[1] - 1, partes[0]);
-}
+    const APINoticias = "http://localhost:3000/noticias"
 
-// função para exibir as notícias do json
-function exibirNoticias(noticiasJson) {
-    let tabela = document.getElementById("noticias");
-    tabela.innerHTML = "";
+    // função para calcular o tempo de publicação
+    function calculaTempoPublicacao(dataPublicacao) {
+        let hoje = new Date();
+        return Math.floor(
+            (hoje - dataPublicacao) / (1000 * 60 * 60 * 24)
+        );
+    }
 
-    noticiasJson.forEach(noticia => {
-        let tempo = calculaTempoPublicacao(converterData(noticia));
-        tabela.innerHTML += `
+    // função para dividir data em partes e retorná-la no objeto Date
+    function converterData(noticia) {
+        let partes = noticia.dataPublicacao.split("/");
+        return new Date(partes[2], partes[1] - 1, partes[0]);
+    }
+
+    // função para exibir as notícias do json
+    function exibirNoticias(noticiasJson) {
+        let tabela = document.getElementById("noticias");
+        tabela.innerHTML = "";
+
+        noticiasJson.forEach(noticia => {
+            let tempo = calculaTempoPublicacao(converterData(noticia));
+            tabela.innerHTML += `
             <tr>
                 <td>${noticia.titulo}</td>
                 <td>${noticia.descricao}</td>
@@ -35,94 +45,87 @@ function exibirNoticias(noticiasJson) {
                 </td>
             </tr>
         `;
-    });
-}
+        });
+    }
 
-// função assíncrona para carregar as notícias
-async function carregarNoticias() {
-    const requisicao = await fetch(
-        "http://localhost:3000/noticias"
-    );
+    // função assíncrona para carregar as notícias
+    async function carregarNoticias() {
+        const requisicao = await fetch(APINoticias);
+        const noticias = await requisicao.json();
+        exibirNoticias(noticias)
+    }
 
-    const noticias = await requisicao.json();
+    carregarNoticias();
 
-    exibirNoticias(noticias)
-}
+    // função para deletar as notícias
+    async function deletarNoticia(id) {
 
-carregarNoticias();
+        await fetch(`${APINoticias}{id}`,
+            {
+                method: "DELETE"
+            }
+        );
 
-// função para deletar as notícias
-async function deletarNoticia(id) {
+        await carregarNoticias();
+    }
 
-    await fetch(`http://localhost:3000/noticias/${id}`,
-        {
-            method: "DELETE"
-        }
-    );
+    // função para adicionar as notícias
+    async function adicionarNoticia(event) {
 
-    await carregarNoticias();
-}
+        event.preventDefault();
 
-// função para adicionar as notícias
-async function adicionarNoticia(event) {
+        let titulo = tituloEl.value;
+        let descricao = descricaoEl.value;
+        let data = dataEl.value;
+        let hora = horaEl.value;
+        let site = siteEl.value;
+        let link = linkEl.value;
 
-    event.preventDefault();
+        const resposta = await fetch(APINoticias);
+        const noticias = await resposta.json();
 
-    let titulo = document.getElementById("titulo").value;
-    let descricao = document.getElementById("descricao").value;
-    let data = document.getElementById("data").value;
-    let hora = document.getElementById("hora").value;
-    let site = document.getElementById("site").value;
-    let link = document.getElementById("link").value;
+        let maiorId = 0;
 
-    const resposta = await fetch(
-        "http://localhost:3000/noticias"
-    );
+        noticias.forEach(noticia => {
+            let idAtual = parseInt(noticia.id);
 
-    const noticias = await resposta.json();
+            if (!isNaN(idAtual) && idAtual > maiorId) {
+                maiorId = idAtual;
+            }
+        });
 
-    let maiorId = 0;
+        let novoId = maiorId + 1;
 
-    noticias.forEach(noticia => {
+        let partes = data.split("-");
+        data = `${partes[2]}/${partes[1]}/${partes[0]}`;
 
-        let idAtual = parseInt(noticia.id);
+        await fetch("http://localhost:3000/noticias",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type":
+                        "application/json"
+                },
 
-        if (!isNaN(idAtual) && idAtual > maiorId) {
-            maiorId = idAtual;
-        }
-    });
+                body: JSON.stringify({
+                    id: novoId,
+                    titulo,
+                    descricao,
+                    dataPublicacao: data,
+                    horaPublicacao: hora,
+                    nomeSite: site,
+                    link
+                })
+            }
+        );
 
-    let novoId = maiorId + 1;
+        tituloEl.value = "";
+        descricaoEl.value = "";
+        dataEl.value = "";
+        horaEl.value = "";
+        siteEl.value = "";
+        linkEl.value = "";
 
-    let partes = data.split("-");
-    data = `${partes[2]}/${partes[1]}/${partes[0]}`;
-
-    await fetch("http://localhost:3000/noticias",
-        {
-            method: "POST",
-            headers: {
-                "Content-Type":
-                    "application/json"
-            },
-
-            body: JSON.stringify({
-                id: novoId,
-                titulo,
-                descricao,
-                dataPublicacao: data,
-                horaPublicacao: hora,
-                nomeSite: site,
-                link
-            })
-        }
-    );
-
-    document.getElementById("titulo").value = "";
-    document.getElementById("descricao").value = "";
-    document.getElementById("data").value = "";
-    document.getElementById("hora").value = "";
-    document.getElementById("site").value = "";
-    document.getElementById("link").value = "";
-
-    await carregarNoticias();
+        await carregarNoticias();
+    }
 }
