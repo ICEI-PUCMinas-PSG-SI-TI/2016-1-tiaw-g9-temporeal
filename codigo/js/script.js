@@ -35,32 +35,125 @@ if (usuarioLogado) {
 }
 
 // login 
-async function login() {
-  const email = document.getElementById("emailLogin").value.trim();
-  const senha = document.getElementById("senhaLogin").value;
-  const erroEl = document.getElementById("erroLogin");
+function login(){
 
-  if (!email || !senha) {
-    mostrarErro(erroEl, "Preencha email e senha.");
-    return;
-  }
+const email =
 
-  try {
-    const resposta = await fetch(`${API_USUARIOS}?email=${encodeURIComponent(email)}`);
-    const usuarios = await resposta.json();
-    const usuario = usuarios.find(u => u.email === email && u.senha === senha);
+document.getElementById("emailLogin").value;
 
-    if (!usuario) {
-      mostrarErro(erroEl, "Email ou senha incorretos.");
-      return;
-    }
 
-    sessionStorage.setItem("usuarioLogado", JSON.stringify(usuario));
-    window.location.href = "home.html";
-  } catch (e) {
-    mostrarErro(erroEl, "Erro ao conectar. Verifique se o json-server está rodando.");
-  }
+
+const senha =
+
+document.getElementById("senhaLogin").value;
+
+
+
+const usuarios =
+
+JSON.parse(localStorage.getItem("usuarios")) || [];
+
+
+
+const usuario =
+
+usuarios.find(usuario =>
+
+usuario.email === email &&
+
+usuario.senha === senha
+
+);
+
+
+if(usuario){
+
+
+localStorage.setItem(
+
+"usuarioLogado",
+
+JSON.stringify(usuario)
+
+);
+
+
+if(usuario.tipo === "professor"){
+
+
+window.location.href="professor.html";
+
+
 }
+
+else if(usuario.tipo === "responsavel"){
+
+
+window.location.href="responsavel.html";
+
+
+
+}
+
+else{
+
+
+
+window.location.href="home.html";
+
+
+}
+
+
+
+}
+
+else{
+
+
+alert("Email ou senha incorretos!");
+
+
+}
+
+}
+
+
+const usuarioLogado =
+
+JSON.parse(localStorage.getItem("usuarioLogado"));
+
+
+if(usuarioLogado){
+
+
+const nomeUsuario =
+
+document.getElementById("nomeUsuario");
+
+
+
+if(nomeUsuario){
+
+
+nomeUsuario.innerHTML =
+usuarioLogado.nome;
+
+
+}
+
+const tipoUsuario =
+
+document.getElementById("tipoUsuario");
+
+if(tipoUsuario){
+
+tipoUsuario.innerHTML =
+
+usuarioLogado.tipo;
+}
+}
+
 
 // cadastro
 async function cadastrar() {
