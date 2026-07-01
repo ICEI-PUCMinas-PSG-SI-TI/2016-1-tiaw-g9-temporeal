@@ -59,6 +59,7 @@
       "senha": "123",
       "dashboard": "professor",
       "id": "Q1riQaEm8wU"
+<<<<<<< HEAD
     },
     {
       "nome": "peter",
@@ -71,6 +72,8 @@
       "senha": "123",
       "dashboard": "professor",
       "id": "2O5zsttGmOo"
+=======
+>>>>>>> 96771fa (a)
     }
   ],
   "tarefas": [
@@ -81,7 +84,29 @@
       "data": "10/06/2026",
       "duracaoHoras": 1,
       "duracaoMinutos": 30,
+<<<<<<< HEAD
       "id": "znACq72U7m0"
+=======
+      "id": "n3tNxtLAtHE"
+    },
+    {
+      "titulo": "sprint 3",
+      "descricao": "",
+      "tipo": "tarefa",
+      "data": "01/07/2026",
+      "duracaoHoras": 3,
+      "duracaoMinutos": 0,
+      "id": "ePLfdM53qhw"
+    },
+    {
+      "titulo": "prova atp",
+      "descricao": "estudar modulos, vetor e matriz",
+      "tipo": "tarefa",
+      "data": "",
+      "duracaoHoras": 1,
+      "duracaoMinutos": 20,
+      "id": "URxRiI3cnOk"
+>>>>>>> 96771fa (a)
     }
   ],
   "atividades": [
