@@ -214,9 +214,9 @@
       "nota": 0,
       "frequencia": 75,
       "status": "Ruim"
-    },
-    {
-    "recados": [
+    }
+  ],
+  "recados": [
     {
       "id": "1",
       "mensagem": "Não esquecer da entrega do trabalho de Matemática.",
