@@ -2,7 +2,7 @@ const API = "http://localhost:3000/alunos";
 
 
 const usuarioLogado =
-JSON.parse(localStorage.getItem("usuarioLogado"));
+JSON.parse(sessionStorage.getItem("usuarioLogado"));
 
 
 if(!usuarioLogado){
@@ -437,7 +437,7 @@ return "Bom";
 function logout(){
 
 
-localStorage.removeItem("usuarioLogado");
+sessionStorage.removeItem("usuarioLogado");
 
 
 window.location.href="index.html";

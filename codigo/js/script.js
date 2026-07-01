@@ -131,5 +131,5 @@ function logout() {
 function mostrarErro(el, msg) {
   if (!el) { alert(msg); return; }
   el.textContent = msg;
-  el.style.display = "block";
+  el.classList.remove("d-none");
 }

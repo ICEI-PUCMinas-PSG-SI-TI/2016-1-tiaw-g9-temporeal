@@ -60,7 +60,7 @@ function carregarNoticiasJS() {
     // função para deletar as notícias
     async function deletarNoticia(id) {
 
-        await fetch(`${APINoticias}{id}`,
+        await fetch(`${APINoticias}/${id}`,
             {
                 method: "DELETE"
             }

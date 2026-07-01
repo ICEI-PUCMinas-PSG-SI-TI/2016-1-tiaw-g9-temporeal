@@ -59,35 +59,29 @@
       "senha": "123",
       "dashboard": "professor",
       "id": "Q1riQaEm8wU"
+    },
+    {
+      "nome": "peter",
+      "telefone": "10239193",
+      "cidade": "vespasiano",
+      "tipo": "professor",
+      "categoria": "Professor",
+      "escola": "puc",
+      "email": "izhakk@gmail.com",
+      "senha": "123",
+      "dashboard": "professor",
+      "id": "2O5zsttGmOo"
     }
   ],
   "tarefas": [
     {
-      "titulo": "prova fsi",
-      "descricao": "nao sei a materia",
-      "tipo": "prova",
-      "data": "02/07/2026",
-      "duracaoHoras": 2,
-      "duracaoMinutos": 30,
-      "id": "n3tNxtLAtHE"
-    },
-    {
-      "titulo": "sprint 3",
-      "descricao": "",
+      "titulo": "oi",
+      "descricao": "oi",
       "tipo": "tarefa",
-      "data": "01/07/2026",
-      "duracaoHoras": 3,
-      "duracaoMinutos": 0,
-      "id": "ePLfdM53qhw"
-    },
-    {
-      "titulo": "prova atp",
-      "descricao": "estudar modulos, vetor e matriz",
-      "tipo": "tarefa",
-      "data": "",
+      "data": "10/06/2026",
       "duracaoHoras": 1,
-      "duracaoMinutos": 20,
-      "id": "URxRiI3cnOk"
+      "duracaoMinutos": 30,
+      "id": "znACq72U7m0"
     }
   ],
   "atividades": [
@@ -109,9 +103,9 @@
   "sessoes": [
     {
       "modo": "cronometro",
-      "tempo": "10:00:03",
-      "data": "30/06/2026, 22:14:29",
-      "id": "36DSuzYjG60"
+      "tempo": "01:00:04",
+      "data": "30/06/2026, 23:13:51",
+      "id": "rjFDLGrqLZ0"
     }
   ],
   "alertas": [
