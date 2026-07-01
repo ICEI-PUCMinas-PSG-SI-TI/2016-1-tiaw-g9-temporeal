@@ -51,6 +51,31 @@
   ],
   "tarefas": [
     {
+      "titulo": "prova fsi",
+      "descricao": "nao sei a materia",
+      "tipo": "prova",
+      "data": "02/07/2026",
+      "duracaoHoras": 2,
+      "duracaoMinutos": 30,
+      "id": "n3tNxtLAtHE"
+    },
+    {
+      "titulo": "sprint 3",
+      "descricao": "",
+      "tipo": "tarefa",
+      "data": "01/07/2026",
+      "duracaoHoras": 3,
+      "duracaoMinutos": 0,
+      "id": "ePLfdM53qhw"
+    },
+    {
+      "titulo": "loucura com doidera",
+      "descricao": "",
+      "tipo": "tarefa",
+      "data": "03/07/2026",
+      "duracaoHoras": 5,
+      "duracaoMinutos": 0,
+      "id": "suMRUogs4eg"
       "titulo": "prova atp",
       "descricao": "",
       "tipo": "tarefa",
