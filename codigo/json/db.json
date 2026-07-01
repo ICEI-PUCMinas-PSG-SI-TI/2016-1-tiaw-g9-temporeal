@@ -49,7 +49,17 @@
       "id": "niwhjfhUr8E"
     }
   ],
-  "tarefas": [],
+  "tarefas": [
+    {
+      "titulo": "prova atp",
+      "descricao": "",
+      "tipo": "tarefa",
+      "data": "09/06/2026",
+      "duracaoHoras": 3,
+      "duracaoMinutos": 0,
+      "id": "F1UsgeV5ZMU"
+    }
+  ],
   "atividades": [
     {
       "titulo": "Estudar algoritmo",
@@ -69,9 +79,9 @@
   "sessoes": [
     {
       "modo": "cronometro",
-      "tempo": "00:00:02",
-      "data": "6/30/2026, 8:18:45 PM",
-      "id": "tNTTtpVxFnk"
+      "tempo": "10:00:03",
+      "data": "30/06/2026, 22:14:29",
+      "id": "36DSuzYjG60"
     }
   ],
   "alertas": [
