@@ -209,6 +209,14 @@
       "nota": 0,
       "frequencia": 75,
       "status": "Ruim"
+    },
+    {
+    "recados": [
+    {
+      "id": "1",
+      "mensagem": "Não esquecer da entrega do trabalho de Matemática.",
+      "professor": "Maria Oliveira",
+      "data": "29/06/2026"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
